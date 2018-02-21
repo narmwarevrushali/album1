@@ -22,6 +22,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -76,6 +77,7 @@ public class CartFullFragment extends Fragment implements View.OnClickListener{
     //FloatingActionButton mFabAdd,mFabDelete;
     Button mBtnAddFrnd;
    public static Button mBtnCoupon;
+    RelativeLayout mRelativeBtnCoupon;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
     private OnFragmentInteractionListener mListener;
@@ -173,7 +175,9 @@ JSONParser mJsonParser;
         mCouponName=SharedPreferencesHelper.getCouponName(getContext());
 
         mBtnCoupon=view.findViewById(R.id.btn_coupon);
-        mBtnCoupon.setOnClickListener(this);
+
+        mRelativeBtnCoupon=view.findViewById(R.id.rltv_btn_coupon);
+        mRelativeBtnCoupon.setOnClickListener(this);
         if(mCouponName!=null)
         {
             mBtnCoupon.setText(mCouponName);
@@ -432,7 +436,7 @@ JSONParser mJsonParser;
                // getActivity().finish();
                 break;
 
-            case R.id.btn_coupon:
+            case R.id.rltv_btn_coupon:
                 Intent intent=new Intent(getContext(), CouponActivity.class);
                 startActivity(intent);
                 break;

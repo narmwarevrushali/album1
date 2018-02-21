@@ -95,16 +95,28 @@
                     android:layout_height="wrap_content"
                     android:padding="20dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/ic_user"
-                        android:drawablePadding="15dp"
-                        android:fontFamily="sans-serif-condensed"
+                    <LinearLayout
+                        android:orientation="horizontal"
                         android:gravity="center"
-                        android:text="My Profile"
-                        style="@style/textStyle"
-                         />
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="15dp"
+                            app:srcCompat="@drawable/ic_user" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-condensed"
+                            android:text="My Profile"
+                            style="@style/textStyle"
+                            />
+                    </LinearLayout>
+
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -127,16 +139,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        app:srcCompat="@drawable/ic_group" />
+
                     <TextView
                         android:text="My Friends"
                         style="@style/textStyle"
-                        android:gravity="center"
-                        android:drawableLeft="@drawable/ic_group"
-                        android:drawablePadding="15dp"
                         android:fontFamily="sans-serif-condensed"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
-
+</LinearLayout>
                     <ImageView
                         android:layout_alignParentRight="true"
                         app:srcCompat="@drawable/ic_right"
@@ -149,22 +171,34 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="@color/grey_300"/>
+
                 <RelativeLayout
                     android:id="@+id/rltv_order_track"
                     android:padding="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        app:srcCompat="@drawable/ic_receipt" />
+
                     <TextView
                         android:text="Order Tracking &amp; Receipts"
                         style="@style/textStyle"
                         android:gravity="center"
-                        android:drawableLeft="@drawable/ic_receipt"
-                        android:drawablePadding="15dp"
                         android:textSize="15sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
-
+</LinearLayout>
                     <ImageView
                         android:layout_alignParentRight="true"
                         app:srcCompat="@drawable/ic_right"

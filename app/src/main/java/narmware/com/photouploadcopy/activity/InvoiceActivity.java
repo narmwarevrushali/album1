@@ -75,13 +75,6 @@ public class InvoiceActivity extends AppCompatActivity {
 
          //   invoiceAdapter.notifyDataSetChanged();
 
-        if(mInvoiceItems.size()==0)
-        {
-            mLinearEmpty.setVisibility(View.VISIBLE);
-        }else{
-            mLinearEmpty.setVisibility(View.INVISIBLE);
-        }
-
     }
 
     class GetInvoiceDetails extends AsyncTask<String, String, String> {
@@ -146,6 +139,12 @@ public class InvoiceActivity extends AppCompatActivity {
                 for (Invoice item : array) {
                     if(item.getInv_status().equals("PAID"))
                     mInvoiceItems.add(item);
+                }
+                if(mInvoiceItems.size()==0)
+                {
+                    mLinearEmpty.setVisibility(View.VISIBLE);
+                }else{
+                    mLinearEmpty.setVisibility(View.INVISIBLE);
                 }
                 invoiceAdapter.notifyDataSetChanged();
                 mProgress.dismiss();
