@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="4dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="narmware.com.photouploadcopy.activity.InvoiceActivity">
+
+    <LinearLayout
+
+        android:id="@+id/invoice_linear"
+        android:background="@color/grey_100"
+        android:layout_centerInParent="true"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:padding="8dp"
+                android:background="@color/blue_grey_100"
+                android:text="Invoice Number"
+                style="@style/textStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <LinearLayout
+                android:background="@color/grey_200"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"></LinearLayout>
+            <TextView
+                android:padding="8dp"
+                android:background="@color/blue_grey_100"
+                android:text="Invoice Date"
+                style="@style/textStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <LinearLayout
+                android:background="@color/grey_200"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"></LinearLayout>
+            <TextView
+                android:padding="8dp"
+                android:background="@color/blue_grey_100"
+                android:text="Invoice Status"
+                style="@style/textStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <LinearLayout
+                android:background="@color/grey_200"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"></LinearLayout>
+            <TextView
+                android:padding="8dp"
+                android:background="@color/blue_grey_100"
+                android:text="Total Amount"
+                style="@style/textStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <LinearLayout
+                android:background="@color/grey_200"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"></LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/txt_inv_no"
+                android:text="12000222"
+                style="@style/textStyle"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <LinearLayout
+                android:background="@color/grey_200"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"></LinearLayout>
+            <TextView
+                android:id="@+id/txt_inv_date"
+                android:padding="8dp"
+                android:text="12/02/2018"
+                style="@style/textStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <LinearLayout
+                android:background="@color/grey_200"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"></LinearLayout>
+            <TextView
+                android:id="@+id/txt_inv_status"
+                android:padding="8dp"
+                android:text="Paid"
+                style="@style/textStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <LinearLayout
+                android:background="@color/grey_200"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"></LinearLayout>
+            <TextView
+                android:id="@+id/txt_inv_total"
+                android:padding="8dp"
+                android:text="Rs. 1500/-"
+                style="@style/textStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <LinearLayout
+                android:background="@color/grey_200"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"></LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
+</android.support.v7.widget.CardView>

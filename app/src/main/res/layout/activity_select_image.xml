@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/grey_200"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/toolbar_relative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+    <RelativeLayout
+        android:layout_alignParentTop="true"
+        android:background="@color/grey_1000w"
+        android:elevation="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <LinearLayout
+            android:clickable="true"
+            android:gravity="center"
+            android:layout_width="60dp"
+            android:layout_height="match_parent">
+        <ImageButton
+            android:id="@+id/btn_back"
+            app:srcCompat="@drawable/back"
+            android:background="@android:color/transparent"
+            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+        <TextView
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            style="@style/small_title_textStyle"
+            android:layout_marginLeft="10dp"
+            android:text="Selected Images"/>
+
+    </RelativeLayout>
+</android.support.design.widget.AppBarLayout>
+
+    <ImageView
+        android:id="@+id/img_empty"
+        app:srcCompat="@drawable/ic_photo"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <GridView
+        android:padding="8dp"
+        android:layout_above="@+id/btn_upload"
+        android:layout_below="@id/toolbar_relative"
+        android:id="@+id/PhoneImageGrid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="3"
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="8dp"
+        />
+
+    <Button
+        android:id="@+id/btn_upload"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_shape"
+        style="@style/buttonStyle"
+        android:layout_alignParentBottom="true"
+        android:text="Upload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</RelativeLayout>

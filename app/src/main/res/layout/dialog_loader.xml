@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+   <com.daimajia.numberprogressbar.NumberProgressBar
+       android:id="@+id/number_progress"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       app:progress_max="100"
+       app:progress_text_size="20sp"
+       app:progress_current="1"
+       android:layout_marginTop="10dp"
+       style="@style/NumberProgressBar_Default"/>
+   <!-- <narmware.com.photouploadcopy.support.NewtonCradleLoading
+        android:id="@+id/newton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+-->
+<!--
+<TextView
+    android:id="@+id/txt_upload_progress"
+    android:layout_below="@id/newton"
+    android:layout_centerHorizontal="true"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text=""
+    android:textColor="@color/colorPrimary"
+    style="@style/small_title_textStyle"/>
+-->
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        app:srcCompat="@drawable/loading"
+        />
+    </RelativeLayout>

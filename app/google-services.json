@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "195776802460",
+    "project_id": "photoupload-18b36"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:195776802460:android:0388e6a7a7cda5c6",
+        "android_client_info": {
+          "package_name": "narmware.com.photoupload"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "195776802460-coiakb9rmcf7ul3bshqfjn9jbt1bk58i.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "195776802460-87ju5p6qebncmnr0m66aivu5jd2aehu1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "narmware.com.photoupload",
+            "certificate_hash": "1b539bde3ea4876ffbb653f0a0ec7f6702c5f218"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnpQY9V7bkD1eTCKOEMuDnSaE0JOmCElI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

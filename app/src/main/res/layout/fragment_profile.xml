@@ -1,0 +1,218 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/grey_200">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/details_card"
+        app:cardCornerRadius="4dp"
+        android:elevation="2dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp">
+
+            <ImageView
+                android:id="@+id/background"
+                android:background="@color/colorPrimary"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="135dp"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/prof_img"
+                android:elevation="5dp"
+                app:layout_anchor="@+id/background"
+                app:layout_anchorGravity="bottom|right"
+                android:layout_marginRight="30dp"
+                android:layout_width="110dp"
+                android:layout_height="110dp" />
+
+        </android.support.design.widget.CoordinatorLayout>
+
+        <LinearLayout
+            android:padding="8dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/prof_name"
+                style="@style/big_title_textStyle"
+                android:textColor="@color/grey_900"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/prof_mail"
+                style="@style/textStyle"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+</LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <ScrollView
+        android:layout_below="@+id/details_card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <android.support.v7.widget.CardView
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="4dp"
+            android:elevation="2dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/rltv_addr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_user"
+                        android:drawablePadding="15dp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:gravity="center"
+                        android:text="My Profile"
+                        style="@style/textStyle"
+                         />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/ic_right" />
+
+
+                    </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey_300"/>
+
+                <RelativeLayout
+                    android:id="@+id/rltv_friends"
+                    android:padding="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="My Friends"
+                        style="@style/textStyle"
+                        android:gravity="center"
+                        android:drawableLeft="@drawable/ic_group"
+                        android:drawablePadding="15dp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/ic_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey_300"/>
+                <RelativeLayout
+                    android:id="@+id/rltv_order_track"
+                    android:padding="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Order Tracking &amp; Receipts"
+                        style="@style/textStyle"
+                        android:gravity="center"
+                        android:drawableLeft="@drawable/ic_receipt"
+                        android:drawablePadding="15dp"
+                        android:textSize="15sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/ic_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </RelativeLayout>
+            </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:layout_gravity="right"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:id="@+id/rltv_faq"
+                    android:padding="8dp"
+                    android:gravity="right"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="FAQ"
+                        style="@style/textStyle"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rltv_tc"
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Terms &amp; Conditions"
+                        android:gravity="center"
+                        style="@style/textStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
+</FrameLayout>

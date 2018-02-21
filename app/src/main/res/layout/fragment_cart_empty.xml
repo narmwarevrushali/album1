@@ -1,0 +1,52 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.HomeFragment">
+
+
+<LinearLayout
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        app:srcCompat="@drawable/ic_cart_red"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+    <TextView
+        android:text="Woops !"
+        android:layout_margin="20dp"
+        style="@style/small_title_textStyle"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="Your cart is empty"
+        style="@style/small_title_textStyle"
+        android:textColor="@color/grey_500"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_back"
+            android:background="@drawable/button_shape_menu"
+            android:padding="4dp"
+            android:layout_marginTop="70dp"
+            android:textColor="@android:color/white"
+            android:text="Back to main menu"
+            style="@style/buttonStyle"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+</LinearLayout>
+
+</FrameLayout>

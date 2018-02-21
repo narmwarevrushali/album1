@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="textStyle">
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="small_title_textStyle">
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="big_title_textStyle">
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="buttonStyle">
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+</resources>

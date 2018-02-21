@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="15dp"
+    android:background="@android:color/white">
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/location"
+        />
+
+    <TextView
+        android:text="Enter your pin code"
+        style="@style/small_title_textStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <AutoCompleteTextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/edt_pin"
+        android:gravity="center"
+        android:background="@android:color/transparent"
+        style="@style/textStyle"
+        android:padding="10dp"
+        android:inputType="number"
+        android:digits="0123456789"
+        android:maxLength="6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Pin code"
+        />
+
+    <LinearLayout
+        android:background="@color/grey_200"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"></LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:id="@+id/linear_bottom"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:text="Cancel"
+            style="@style/buttonStyle"
+            android:background="@android:color/transparent"
+            android:textColor="@color/light_blue_A700"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:text="Submit"
+            android:layout_margin="10dp"
+            style="@style/buttonStyle"
+            android:background="@drawable/button_shape_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>
