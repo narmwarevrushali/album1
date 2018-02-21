@@ -45,8 +45,6 @@
             style="@style/textStyle"
             android:textColor="@color/grey_700"
             android:gravity="center"
-            android:drawableRight="@drawable/ic_shipping"
-            android:drawablePadding="20dp"
             android:layout_alignParentLeft="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -77,8 +75,6 @@
             style="@style/textStyle"
             android:textColor="@color/grey_700"
             android:gravity="center"
-            android:drawableRight="@drawable/ic_redeem_black_24dp"
-            android:drawablePadding="20dp"
             android:layout_alignParentLeft="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

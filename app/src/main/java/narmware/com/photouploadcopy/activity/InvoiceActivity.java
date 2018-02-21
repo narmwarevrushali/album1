@@ -57,7 +57,7 @@ public class InvoiceActivity extends AppCompatActivity {
 
         mJsonParser=new JSONParser();
 
-        mLinearEmpty= (LinearLayout) findViewById(R.id.empty_coupon);
+        mLinearEmpty= (LinearLayout) findViewById(R.id.empty_invoice);
         mLinearEmpty.setVisibility(View.INVISIBLE);
     }
 

@@ -246,8 +246,6 @@
             android:layout_margin="2dp"
             android:paddingLeft="5dp"
             android:paddingRight="8dp"
-            android:background="@drawable/button_coupon"
-            android:drawableRight="@drawable/ic_redeem_black_24dp"
             android:drawablePadding="10dp"
             android:text="Get coupon"
             android:singleLine="true"

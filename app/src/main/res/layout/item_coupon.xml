@@ -76,7 +76,6 @@
                 android:paddingBottom="2dp"
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
-                android:drawableLeft="@drawable/ic_chevron_right"
                 android:text="Minimum Transaction"
                 style="@style/textStyle"
                 android:textColor="@color/grey_800"
