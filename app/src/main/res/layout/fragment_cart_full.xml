@@ -254,10 +254,10 @@
         android:background="@android:color/transparent"
         android:singleLine="true"
         android:ellipsize="end"
+        style="@style/buttonStyle"
         android:layout_toLeftOf="@+id/redeem"
         android:layout_centerInParent="true"
         android:textColor="@color/yellow_700"
-        android:textAllCaps="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

@@ -37,14 +37,14 @@
 
         <Button
             android:id="@+id/btn_back"
-            android:background="@drawable/button_shape_menu"
+            android:background="@drawable/button_dialog"
             android:padding="4dp"
             android:layout_marginTop="70dp"
-            android:textColor="@android:color/white"
+            android:textColor="@color/colorPrimary"
             android:text="Back to main menu"
             style="@style/buttonStyle"
             android:layout_centerInParent="true"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content" />
 
 </LinearLayout>
