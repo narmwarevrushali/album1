@@ -6,11 +6,12 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:padding="15dp"
+    android:minWidth="300dp"
     android:background="@android:color/white">
 
     <pl.droidsonroids.gif.GifImageView
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:src="@drawable/location"
         />
 
