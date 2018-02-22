@@ -54,7 +54,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         style="@style/small_title_textStyle"
-                        android:text="Album"
+                        android:text=" Album"
                         android:textColor="@color/grey_900"
                         android:textSize="20dp" />
 
@@ -86,9 +86,10 @@
                 <TextView
                     android:layout_gravity="center"
                     android:gravity="center"
+                    android:layout_marginTop="5sp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginRight="30dp"
-                    android:text="Select upto 30 photos with free albun covers to go with them"
+                    android:text="Select upto 30 photos with free album cover to go with them"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -97,6 +98,7 @@
                     android:layout_marginTop="45dp"
                     android:text="CREATE ALBUM"
                     android:textSize="12sp"
+
                     android:textColor="@color/colorPrimary"
                     android:background="@drawable/button_album_card"
                     android:layout_width="150dp"
