@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.LinearSnapHelper;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SnapHelper;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -123,6 +125,8 @@ public class AlbumFragment extends Fragment implements View.OnClickListener{
         mRecyclerView.setAdapter(albumAdapter);
         mRecyclerView.setNestedScrollingEnabled(false);
         mRecyclerView.setFocusable(false);
+        SnapHelper snapper = new LinearSnapHelper();
+        snapper.attachToRecyclerView(mRecyclerView);
 
 
     }

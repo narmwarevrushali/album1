@@ -3,23 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
     <android.support.v7.widget.CardView
         android:id="@+id/album_card"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginRight="3dp"
-        android:layout_marginTop="3dp"
-        app:cardCornerRadius="5dp"
-        app:cardUseCompatPadding="true">
+        android:layout_height="match_parent"
+        app:cardCornerRadius="5dp">
 
         <LinearLayout
-            android:paddingTop="15dp"
-            android:paddingRight="15dp"
-            android:paddingLeft="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -28,23 +20,18 @@
                 android:id="@+id/img_album"
                 android:layout_gravity="center"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:background="@drawable/album" />
+                android:layout_height="match_parent"
+                android:background="@drawable/curved" />
+
+
 
             <LinearLayout
-                android:layout_above="@+id/linear_size"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:background="@color/grey_500"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"></LinearLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical"
                 >
-
                 <LinearLayout
                     android:id="@+id/linear_size"
                     android:layout_alignParentLeft="true"
@@ -95,7 +82,26 @@
                     android:text=""
                    />
                 </LinearLayout>
-            </RelativeLayout>
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:text="Select upto 30 photos with free albun covers to go with them"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/bt_card_album_create"
+                    android:layout_marginTop="45dp"
+                    android:text="CREATE ALBUM"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorPrimary"
+                    android:background="@drawable/button_album_card"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
         </LinearLayout>
 
     </android.support.v7.widget.CardView>

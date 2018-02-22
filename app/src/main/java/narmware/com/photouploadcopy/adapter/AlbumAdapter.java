@@ -49,14 +49,16 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.MyViewHolder
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
         public TextView mTxtAlbumSize,mTxtAlbumPrice;
+        public Button mCreateAlbum;
         UserAlbum mItem;
 
         public MyViewHolder(View view) {
             super(view);
             mTxtAlbumPrice= (TextView) view.findViewById(R.id.txt_album_price);
             mTxtAlbumSize=view.findViewById(R.id.txt_album_size);
+            mCreateAlbum = view.findViewById(R.id.bt_card_album_create);
 
-            view.setOnClickListener(new View.OnClickListener() {
+            mCreateAlbum.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
