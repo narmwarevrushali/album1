@@ -367,6 +367,7 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
                   SharedPreferencesHelper.setPaymentStatus(Constants.PAID,WebViewActivity.this);
                   SharedPreferencesHelper.setInvoiceId(null,WebViewActivity.this);
                   SharedPreferencesHelper.setAlbumId(null,WebViewActivity.this);
+                  SharedPreferencesHelper.setFramePrice(null,WebViewActivity.this);
 
                   SharedPreferencesHelper.setCouponMinPrice(null, WebViewActivity.this);
                   SharedPreferencesHelper.setCouponPrice(null, WebViewActivity.this);

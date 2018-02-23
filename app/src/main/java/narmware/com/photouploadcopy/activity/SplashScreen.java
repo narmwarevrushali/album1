@@ -204,6 +204,7 @@ public class SplashScreen extends AppCompatActivity {
                     SharedPreferencesHelper.setPaymentStatus(Constants.PAID,SplashScreen.this);
                     SharedPreferencesHelper.setInvoiceId(null,SplashScreen.this);
                     SharedPreferencesHelper.setAlbumId(null,SplashScreen.this);
+                    SharedPreferencesHelper.setFramePrice(null,SplashScreen.this);
 
                     SharedPreferencesHelper.setCouponMinPrice(null, SplashScreen.this);
                     SharedPreferencesHelper.setCouponPrice(null, SplashScreen.this);

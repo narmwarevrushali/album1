@@ -93,6 +93,7 @@ JSONParser mJsonParser;
     protected Dialog mEmptyMobileDialog;
 
     String totalPics,totalFrnds;
+    int AlbumPrice,FramePrice;
     String mCouponName;
     int sendToMePos=0;
     public static int totalCount,totalAmount,finalTotal,minTransactionAmt,total,discountAmount,shippingCharges;
@@ -168,8 +169,13 @@ JSONParser mJsonParser;
         mTxtDisc=view.findViewById(R.id.txt_disc);
         mTxtShipping=view.findViewById(R.id.txt_shipping);
 
-        int AlbumPrice= Integer.parseInt(SharedPreferencesHelper.getAlbumPrice(mContext));
-        int FramePrice= Integer.parseInt(SharedPreferencesHelper.getFramePrice(mContext));
+        if(SharedPreferencesHelper.getAlbumPrice(mContext)!=null) {
+            AlbumPrice = Integer.parseInt(SharedPreferencesHelper.getAlbumPrice(mContext));
+        }
+
+        if(SharedPreferencesHelper.getFramePrice(mContext)!=null) {
+             FramePrice = Integer.parseInt(SharedPreferencesHelper.getFramePrice(mContext));
+        }
 
        // totalAmount= Integer.parseInt(SharedPreferencesHelper.getAlbumPrice(getContext()));
         totalAmount=AlbumPrice+FramePrice;
@@ -386,6 +392,10 @@ JSONParser mJsonParser;
         {
             case R.id.send_cart:
 
+                if(SharedPreferencesHelper.getFramePrice(mContext)==null)
+                {
+                    Toast.makeText(mContext, "Please select your frame", Toast.LENGTH_SHORT).show();
+                }
                 if(totalCount==0)
                 {
                     Toast.makeText(mContext, "Please select atleast one Receiver", Toast.LENGTH_SHORT).show();
@@ -965,7 +975,7 @@ JSONParser mJsonParser;
                         Log.e("Friends data","Name  "+temp.get(c).getFr_name()+"server id  "+temp.get(c).getF_id());
                     }
 
-                    Toast.makeText(getContext(), "Profile updated successfully", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getContext(), "Profile updated successfully", Toast.LENGTH_SHORT).show();
                 }
                 if(response==Constants.ALREADY_PRESENT)
                 {

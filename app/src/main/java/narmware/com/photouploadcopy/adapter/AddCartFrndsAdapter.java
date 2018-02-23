@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -54,11 +53,11 @@ public class AddCartFrndsAdapter extends RecyclerView.Adapter<AddCartFrndsAdapte
 
                     if(b==true)
                     {
-                        Toast.makeText(mContext,b+"", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(mContext,b+"", Toast.LENGTH_SHORT).show();
                         databaseAccess.UpdateCartFlag(1, Integer.parseInt(mItem.getF_id()));
                     }
                    else if(b==false) {
-                        Toast.makeText(mContext,b+"", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(mContext,b+"", Toast.LENGTH_SHORT).show();
                         databaseAccess.UpdateCartFlag(0,Integer.parseInt(mItem.getF_id()));
                         databaseAccess.UpdateQty("1",Integer.parseInt(mItem.getF_id()));
                     }
