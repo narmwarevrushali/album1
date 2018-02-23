@@ -195,7 +195,7 @@ public class SelectImagesActivity extends AppCompatActivity implements View.OnCl
                 mBtnSelect.setEnabled(true);
 
             }
-            else
+            if(temp.size() == 0)
             {
                 mImgEmpty.setVisibility(View.VISIBLE);
                 mGridView.setVisibility(View.INVISIBLE);
@@ -210,6 +210,13 @@ public class SelectImagesActivity extends AppCompatActivity implements View.OnCl
                 images.add(temp.get(i));
 
                 // Toast.makeText(SelectImagesActivity.this,images.get(i).name, Toast.LENGTH_SHORT).show();
+            }
+            if(images.size() == 0)
+            {
+                mImgEmpty.setVisibility(View.VISIBLE);
+                mGridView.setVisibility(View.INVISIBLE);
+                mBtnSelect.setEnabled(false);
+                finish();
             }
             countSelected=images.size();
             mAdapter=new GalleryAdapter(images,SelectImagesActivity.this);

@@ -25,10 +25,14 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashSet;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import narmware.com.photouploadcopy.R;
 import narmware.com.photouploadcopy.adapter.CustomAlbumSelectAdapter;
 import narmware.com.photouploadcopy.helpers.Constants;
 import narmware.com.photouploadcopy.models.Album;
+import narmware.com.photouploadcopy.models.Image;
+import narmware.com.photouploadcopy.support.DatabaseAccess;
+import narmware.com.photouploadcopy.support.SharedPreferencesHelper;
 
 /**
  * Created by Darshan on 4/14/2015.
@@ -199,9 +203,45 @@ public class AlbumSelectActivity extends HelperActivity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        //super.onBackPressed();
         setResult(RESULT_CANCELED);
-        finish();
+        new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
+                .setTitleText("Are you sure?")
+                .setContentText("Your changes will be discard!")
+                .setConfirmText("Yes,discard it!")
+                .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SweetAlertDialog sDialog) {
+                      /*  sDialog
+                                .setTitleText("Discarded!")
+                                .setContentText("Your imaginary file has been deleted!")
+                                .setConfirmText("OK")
+                                .setConfirmClickListener(null)
+                                .showCancelButton(false)
+                                .changeAlertType(SweetAlertDialog.SUCCESS_TYPE);*/
+
+                       DatabaseAccess databaseAccess = DatabaseAccess.getInstance(AlbumSelectActivity.this);
+                        databaseAccess.open();
+                        databaseAccess.deleteAll();
+                        SharedPreferencesHelper.setAlbumId(null,AlbumSelectActivity.this);
+                        SharedPreferencesHelper.setInvoiceId(null,AlbumSelectActivity.this);
+                        ArrayList<Image> blankList=new ArrayList<>();
+                        Intent intent = new Intent();
+                        intent.putParcelableArrayListExtra(Constants.INTENT_EXTRA_IMAGES,blankList);
+                        setResult(RESULT_OK, intent);
+                        finish();
+
+                    }
+                })
+                .showCancelButton(true)
+                .setCancelText("Cancel")
+                .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SweetAlertDialog sDialog) {
+                        sDialog.cancel();
+                    }
+                })
+                .show();
     }
 
     @Override

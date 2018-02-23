@@ -12,6 +12,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.Process;
 import android.provider.MediaStore;
+import android.support.graphics.drawable.VectorDrawableCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
@@ -101,7 +102,7 @@ public class ImageSelectActivity extends HelperActivity {
             }
         });
 
-      /*  actionBar = getSupportActionBar();
+        actionBar = getSupportActionBar();
         if (actionBar != null) {
             //final Drawable upArrow = getResources().getDrawable(R.drawable.abc_ic_ab_back_material);
             final VectorDrawableCompat upArrow  = VectorDrawableCompat.create(getResources(),R.drawable.back, null);
@@ -110,7 +111,7 @@ public class ImageSelectActivity extends HelperActivity {
             actionBar.setHomeAsUpIndicator(upArrow);
            // actionBar.setDisplayShowTitleEnabled(true);
             //actionBar.setTitle(R.string.image_view);
-        }*/
+        }
 
         Intent intent = getIntent();
         if (intent == null) {

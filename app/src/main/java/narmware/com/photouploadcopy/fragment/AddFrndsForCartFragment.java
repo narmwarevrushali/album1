@@ -107,6 +107,12 @@ public class AddFrndsForCartFragment extends Fragment implements View.OnClickLis
         return view;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        SharedPreferencesHelper.setSelectedFragment("AddCartFrndsFragment",getContext());
+    }
+
     private void init(View view) {
         mJsonParser=new JSONParser();
 

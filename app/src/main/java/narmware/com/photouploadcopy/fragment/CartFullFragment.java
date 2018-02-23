@@ -36,6 +36,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import narmware.com.photouploadcopy.MyApplication;
 import narmware.com.photouploadcopy.R;
 import narmware.com.photouploadcopy.activity.CouponActivity;
@@ -175,6 +176,7 @@ JSONParser mJsonParser;
         mCouponName=SharedPreferencesHelper.getCouponName(getContext());
 
         mBtnCoupon=view.findViewById(R.id.btn_coupon);
+        mBtnCoupon.setOnClickListener(this);
 
         mRelativeBtnCoupon=view.findViewById(R.id.rltv_btn_coupon);
         mRelativeBtnCoupon.setOnClickListener(this);
@@ -322,7 +324,20 @@ JSONParser mJsonParser;
                     Toast.makeText(mContext, "Please select atleast one receiver", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Toast.makeText(mContext, "Coupon is not applicable", Toast.LENGTH_SHORT).show();
+
+                    new SweetAlertDialog(mContext, SweetAlertDialog.ERROR_TYPE)
+                            .setTitleText("Oops...")
+                            .setContentText("Coupon is not valid below Rs."+SharedPreferencesHelper.getCouponMinPrice(mContext))
+                            .setConfirmText("Ok")
+                            .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                @Override
+                                public void onClick(SweetAlertDialog sDialog) {
+                                    sDialog.cancel();
+                                }
+                            })
+                            .show();
+
+                    //Toast.makeText(mContext, "Coupon is not applicable", Toast.LENGTH_SHORT).show();
                 }
 
                 SharedPreferencesHelper.setCouponMinPrice(null, mContext);
@@ -439,6 +454,11 @@ JSONParser mJsonParser;
             case R.id.rltv_btn_coupon:
                 Intent intent=new Intent(getContext(), CouponActivity.class);
                 startActivity(intent);
+                break;
+
+            case R.id.btn_coupon:
+                Intent intentCoupon=new Intent(getContext(), CouponActivity.class);
+                startActivity(intentCoupon);
                 break;
 
         }
