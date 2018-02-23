@@ -8,12 +8,18 @@
     android:orientation="vertical"
     >
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <include layout="@layout/app_bar_layout"></include>
-
-    </LinearLayout>
+        android:layout_height="60dp">
+        <TextView
+            android:text="Select a frame for album"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"

@@ -27,7 +27,6 @@ public class SelectFrameActivity extends AppCompatActivity implements SelectFram
     FragmentManager mFragmentManager;
     FragmentTransaction mFragmentTransaction;
     TextView mTxtTitle;
-    ImageView mImgLogo;
 
         @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +37,6 @@ public class SelectFrameActivity extends AppCompatActivity implements SelectFram
         setFragment(new SelectFrameFragment());
 
        // mTxtTitle= (TextView) findViewById(R.id.txt_title);
-        mImgLogo= (ImageView) findViewById(R.id.img_logo);
         //mImgLogo.setVisibility(View.INVISIBLE);
     }
 
@@ -60,17 +58,7 @@ public class SelectFrameActivity extends AppCompatActivity implements SelectFram
     public void onFragmentInteraction(String title) {
 
 
-        if(title.equals("Home"))
-        {
-            mImgLogo.setVisibility(View.VISIBLE);
-            mTxtTitle.setVisibility(View.INVISIBLE);
-        }
-        else
-        {
-            mImgLogo.setVisibility(View.INVISIBLE);
-            //mTxtTitle.setVisibility(View.VISIBLE);
-           // mTxtTitle.setText(title);
-        }
+
     }
 
    /* @Override
