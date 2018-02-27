@@ -123,7 +123,7 @@
     <dimen name="intro_linear_margin_top">30dp</dimen>
     <dimen name="intro_txt_margin">20dp</dimen>
     <dimen name="intro_img_margin_top">25dp</dimen>
-    <dimen name="intro_img_height">300dp</dimen>
+    <dimen name="intro_img_padding">10dp</dimen>
 
     <!-- gallery_item -->
     <dimen name="gallery_item_width">100dp</dimen>
@@ -148,6 +148,7 @@
     <dimen name="coupon_btn_width">200dp</dimen>
 
     <!--single cart_frnd item -->
+    <dimen name="cart_frnd_item_padding">1dp</dimen>
     <dimen name="cart_frnd_txt_padding">8dp</dimen>
     <dimen name="cart_frnd_check_padding">10dp</dimen>
     <dimen name="cart_frnd_btn_padding">2dp</dimen>

@@ -248,7 +248,7 @@ public class MainActivity2 extends AppCompatActivity implements AddFrndsForCartF
         mAutoPin.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(MainActivity2.this,pinList.get(i).getPin_code(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity2.this,pinList.get(i).getPin_code(), Toast.LENGTH_SHORT).show();
                 mPin=pinList.get(i).getPin_code();
                 mCity=pinList.get(i).getCity();
                 mState=pinList.get(i).getState();

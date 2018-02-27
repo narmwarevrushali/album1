@@ -94,6 +94,8 @@
 
                 <TextView
                     android:layout_gravity="center"
+                    style="@style/textStyle"
+                    android:textColor="@color/grey_700"
                     android:gravity="center"
                     android:layout_marginTop="@dimen/card_album_desc_margin_top"
                     android:layout_marginLeft="@dimen/card_album_desc_margin_left"

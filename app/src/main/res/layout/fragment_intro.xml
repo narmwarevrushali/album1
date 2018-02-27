@@ -2,23 +2,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.HomeFragment">
+  >
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:layout_marginTop="@dimen/intro_linear_margin_top"
-            android:orientation="vertical"
-            android:gravity="center"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/intro_title"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
                 android:textStyle="bold"
                 android:layout_margin="@dimen/intro_txt_margin"
+                android:text="Hellooooo"
                 style="@style/small_title_textStyle"
                 android:textColor="@color/red_A400"
                 android:gravity="center"
@@ -26,13 +22,14 @@
                 android:layout_height="wrap_content" />
 
             <ImageView
+                android:layout_centerInParent="true"
+                android:padding="@dimen/intro_img_padding"
                 android:id="@+id/intro_img"
+                android:layout_below="@+id/intro_title"
                 android:layout_marginTop="@dimen/intro_img_margin_top"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/intro_img_height" />
+                android:src="@drawable/album1"
+                android:layout_height="match_parent" />
 
-        </LinearLayout>
-
-    </ScrollView>
-
+        </RelativeLayout>
 </FrameLayout>

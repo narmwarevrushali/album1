@@ -1,8 +1,6 @@
 package narmware.com.photouploadcopy.fragment;
 
-import android.app.ProgressDialog;
 import android.content.Context;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -17,23 +15,15 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
-import com.google.gson.Gson;
 import com.labo.kaji.fragmentanimations.MoveAnimation;
 
-import org.json.JSONObject;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
-import narmware.com.photouploadcopy.MyApplication;
 import narmware.com.photouploadcopy.R;
 import narmware.com.photouploadcopy.adapter.AddCartFrndsAdapter;
-import narmware.com.photouploadcopy.helpers.Constants;
 import narmware.com.photouploadcopy.models.Friends;
-import narmware.com.photouploadcopy.models.FriendsResponse;
 import narmware.com.photouploadcopy.support.DatabaseAccess;
 import narmware.com.photouploadcopy.support.JSONParser;
 import narmware.com.photouploadcopy.support.SharedPreferencesHelper;
@@ -125,6 +115,7 @@ public class AddFrndsForCartFragment extends Fragment implements View.OnClickLis
         temp =databaseAccess.getFriends();
         if(temp.size()!=0) {
             mLinearEmpty.setVisibility(View.INVISIBLE);
+            mBtnAddFrnds.setEnabled(true);
             setFrndAdapter(view);
         }
 
@@ -134,6 +125,7 @@ public class AddFrndsForCartFragment extends Fragment implements View.OnClickLis
 
         if(temp.size()!=0) {
             mLinearEmpty.setVisibility(View.INVISIBLE);
+            mBtnAddFrnds.setEnabled(true);
             mCategoryRecyclerView = v.findViewById(R.id.recycler);
             mCategoryAdapter = new AddCartFrndsAdapter(getContext(), mCategoryItems);
             RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
@@ -156,7 +148,7 @@ public class AddFrndsForCartFragment extends Fragment implements View.OnClickLis
         }
         else {
             mLinearEmpty.setVisibility(View.VISIBLE);
-
+            mBtnAddFrnds.setEnabled(false);
         }
     }
 
@@ -216,83 +208,5 @@ public class AddFrndsForCartFragment extends Fragment implements View.OnClickLis
         void onFragmentInteraction(String title);
     }
 
-    class getAllFrndsFromServer extends AsyncTask<String, String, String> {
-        protected ProgressDialog mProgress;
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-
-            //Toast.makeText(LoginActivity.this,"Pre execute",Toast.LENGTH_SHORT).show();
-            mProgress = new ProgressDialog(getContext());
-            mProgress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-            mProgress.setIndeterminate(true);
-            mProgress.setMessage("Geting Friends");
-            mProgress.setCancelable(false);
-            mProgress.show();
-        }
-
-        @Override
-        protected String doInBackground(String... strings) {
-            String json = null;
-            try
-            {
-                Gson gson = new Gson();
-
-                HashMap<String, String> params = new HashMap<>();
-                params.put(Constants.USER_ID, SharedPreferencesHelper.getUserId(getContext()));
-
-                String url = MyApplication.URL_SERVER + MyApplication.URL_GET_ALL_FRNDS;
-                Log.e("JSON data updated url",url);
-                JSONObject ob=mJsonParser.makeHttpRequest(url, "GET",params );
-
-                if (ob == null) {
-                    Log.d("RESPONSE", "ERRORRRRR");
-                }
-                else {
-                    json = ob.toString();
-                }
-            }
-            catch (Exception ex) {
-
-                ex.printStackTrace();
-            }
-
-            return json;
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-
-            try{Gson gson = new Gson();
-                if (s != null)
-                    Log.e("Friend all data", s);
-
-                else
-                    Log.e("data", "login is null");
-
-                FriendsResponse response = gson.fromJson(s, FriendsResponse.class);
-                Friends[] array = response.getData();
-                for (Friends item : array) {
-
-                    temp.add(item);
-
-                }
-                DatabaseAccess databaseAccess = DatabaseAccess.getInstance(getContext());
-                    databaseAccess.open();
-
-                    for(int c=0;c < temp.size();c++)
-                    {
-                        databaseAccess.setFrndsProfile(temp.get(c).getAddress(),temp.get(c).getState(),temp.get(c).getDist(),temp.get(c).getCity(),temp.get(c).getPin(),temp.get(c).getMobile(),temp.get(c).getFr_name(),temp.get(c).getFr_email(),temp.get(c).getF_id(),"1",0);
-                        Log.e("Friends data","Name  "+temp.get(c).getFr_name()+"server id  "+temp.get(c).getF_id());
-                    }
-                mProgress.dismiss();
-            }catch (Exception e)
-            {
-                Toast.makeText(getContext(),"Internet not available,can not login",Toast.LENGTH_LONG).show();
-                mProgress.dismiss();
-            }
-        }
-    }
 
 }

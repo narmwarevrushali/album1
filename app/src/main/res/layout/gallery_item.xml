@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
     android:layout_width="@dimen/gallery_item_width"
     android:layout_height="@dimen/gallery_item_height" >
 
@@ -23,6 +24,7 @@
         android:id="@+id/img"
         android:scaleType="fitCenter"
         android:layout_margin="@dimen/gallery_item_margin"
+        android:layout_centerInParent="true"
         android:layout_width="@dimen/gallery_item_width"
         android:layout_height="@dimen/gallery_item_height" />
 
