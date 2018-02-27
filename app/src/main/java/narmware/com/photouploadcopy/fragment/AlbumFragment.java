@@ -1,5 +1,6 @@
 package narmware.com.photouploadcopy.fragment;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
@@ -15,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -51,6 +53,7 @@ public class AlbumFragment extends Fragment implements View.OnClickListener{
     private JSONParser mJsonParser;
     TextView mTxtAlbumPrice,mTxtAlbumSize;
     String mAlbumSize,mAlbumPrice;
+    protected Dialog mNoConnectionDialog;
 
     List<UserAlbum> mAlbumItems;
     protected RecyclerView mRecyclerView;
@@ -287,9 +290,34 @@ public class AlbumFragment extends Fragment implements View.OnClickListener{
             }catch (Exception e)
             {
                 // Toast.makeText(mContext,"Internet not available,can not login",Toast.LENGTH_LONG).show();
+                showNoConnectionDialog();
                 mProgress.dismiss();
             }
         }
     }
 
+    private void showNoConnectionDialog() {
+        mNoConnectionDialog = new Dialog(getContext(), android.R.style.Theme_Light_NoTitleBar_Fullscreen);
+        mNoConnectionDialog.setContentView(R.layout.dialog_noconnectivity);
+        mNoConnectionDialog.setCancelable(false);
+        mNoConnectionDialog.show();
+
+        Button exit = mNoConnectionDialog.findViewById(R.id.dialog_no_connec_exit);
+        Button tryAgain = mNoConnectionDialog.findViewById(R.id.dialog_no_connec_try_again);
+
+        exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getActivity().finish();
+            }
+        });
+
+        tryAgain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new GetAlbumSizePrice().execute();
+                mNoConnectionDialog.dismiss();
+            }
+        });
+    }
 }

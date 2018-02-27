@@ -1,6 +1,7 @@
 package narmware.com.photouploadcopy.activity;
 
 import android.annotation.TargetApi;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -11,6 +12,7 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.daimajia.androidanimations.library.Techniques;
@@ -48,6 +50,8 @@ public class SplashScreen extends AppCompatActivity {
     int version_code;
     ArrayList<PinCode> pinCodes;
     ArrayList<VersionCode> versionCodes;
+    int running_async=0;
+    protected Dialog mNoConnectionDialog;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -121,7 +125,7 @@ public class SplashScreen extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-
+            running_async=3;
         }
 
 
@@ -223,7 +227,7 @@ public class SplashScreen extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-
+            running_async=2;
         }
 
 
@@ -304,7 +308,7 @@ public class SplashScreen extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-
+            running_async=1;
         }
 
 
@@ -387,6 +391,44 @@ public class SplashScreen extends AppCompatActivity {
 
             }
         }
+    }
+
+
+    private void showNoConnectionDialog() {
+        mNoConnectionDialog = new Dialog(SplashScreen.this, android.R.style.Theme_Light_NoTitleBar_Fullscreen);
+        mNoConnectionDialog.setContentView(R.layout.dialog_noconnectivity);
+        mNoConnectionDialog.setCancelable(false);
+        mNoConnectionDialog.show();
+
+        Button exit = mNoConnectionDialog.findViewById(R.id.dialog_no_connec_exit);
+        Button tryAgain = mNoConnectionDialog.findViewById(R.id.dialog_no_connec_try_again);
+
+        exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+        tryAgain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(running_async==1)
+                {
+                    new GetAllPinCodes().execute();
+                }
+                if(running_async==2)
+                {
+                    new CheckVersion().execute();
+                }
+                if(running_async==3)
+                {
+                    new GetInvoiceStatus().execute();
+                }
+                mNoConnectionDialog.dismiss();
+            }
+        });
     }
 
 }

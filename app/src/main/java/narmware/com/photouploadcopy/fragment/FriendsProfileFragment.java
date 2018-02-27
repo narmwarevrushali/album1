@@ -395,7 +395,7 @@ public class FriendsProfileFragment extends Fragment implements View.OnClickList
                 mProgress.dismiss();
             }catch (Exception e)
             {
-                Toast.makeText(getContext(),"Internet not available",Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(),"Internet not available,can not update profile",Toast.LENGTH_LONG).show();
                 mProgress.dismiss();
             }
         }
@@ -496,7 +496,7 @@ public class FriendsProfileFragment extends Fragment implements View.OnClickList
                // mProgress.dismiss();
             }catch (Exception e)
             {
-                Toast.makeText(getContext(),"Internet not available",Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(),"Internet not available,can not update profile",Toast.LENGTH_LONG).show();
              //   mProgress.dismiss();
             }
         }
@@ -597,7 +597,7 @@ public class FriendsProfileFragment extends Fragment implements View.OnClickList
                 }
             }catch (Exception e)
             {
-                //Toast.makeText(InvoiceActivity.this,"Internet not available,can not login",Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(),"Internet not available,can not update profile",Toast.LENGTH_LONG).show();
                 //showNoConnectionDialog();
             }
         }

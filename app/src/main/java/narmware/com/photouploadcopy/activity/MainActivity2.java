@@ -69,6 +69,7 @@ public class MainActivity2 extends AppCompatActivity implements AddFrndsForCartF
     String mPin,mDist,mState,mCity;
     boolean doubleBackToExitPressedOnce = false;
     BottomNavigationView navigation;
+    protected Dialog mNoConnectionDialog;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -337,7 +338,7 @@ public class MainActivity2 extends AppCompatActivity implements AddFrndsForCartF
             }catch (Exception e)
             {
                 //Toast.makeText(InvoiceActivity.this,"Internet not available,can not login",Toast.LENGTH_LONG).show();
-                //showNoConnectionDialog();
+                showNoConnectionDialog();
             }
         }
     }
@@ -515,4 +516,28 @@ public class MainActivity2 extends AppCompatActivity implements AddFrndsForCartF
         }
     }
 
+    private void showNoConnectionDialog() {
+        mNoConnectionDialog = new Dialog(MainActivity2.this, android.R.style.Theme_Light_NoTitleBar_Fullscreen);
+        mNoConnectionDialog.setContentView(R.layout.dialog_noconnectivity);
+        mNoConnectionDialog.setCancelable(false);
+        mNoConnectionDialog.show();
+
+        Button exit = mNoConnectionDialog.findViewById(R.id.dialog_no_connec_exit);
+        Button tryAgain = mNoConnectionDialog.findViewById(R.id.dialog_no_connec_try_again);
+
+        exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+        tryAgain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new GetPinStatus().execute();
+                mNoConnectionDialog.dismiss();
+            }
+        });
+    }
 }

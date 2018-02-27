@@ -801,7 +801,7 @@ JSONParser mJsonParser;
                 mProgress.dismiss();
             }catch (Exception e)
             {
-                Toast.makeText(getContext(),"Internet not available,can not login",Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(),"Internet not available,can not update profile",Toast.LENGTH_LONG).show();
                 mProgress.dismiss();
             }
         }
@@ -890,7 +890,7 @@ JSONParser mJsonParser;
                 mProgress.dismiss();
             }catch (Exception e)
             {
-                Toast.makeText(getContext(),"Internet not available,can not login",Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(),"Internet not available,can not update profile",Toast.LENGTH_LONG).show();
                 mProgress.dismiss();
             }
         }
@@ -984,7 +984,7 @@ JSONParser mJsonParser;
                 // mProgress.dismiss();
             }catch (Exception e)
             {
-                Toast.makeText(getContext(),"Internet not available",Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(),"Internet not available,can not update profile",Toast.LENGTH_LONG).show();
                 //   mProgress.dismiss();
             }
         }
