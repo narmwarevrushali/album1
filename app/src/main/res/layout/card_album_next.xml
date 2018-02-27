@@ -21,17 +21,17 @@
                 android:id="@+id/img_album"
                 android:layout_gravity="center"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="@dimen/card_album_top_height"
                 android:background="@drawable/semicircle_shape" >
 
                 <ImageView
                     android:src="@drawable/collage"
-                    android:layout_margin="20dp"
+                    android:layout_margin="@dimen/card_album_top_img_margin"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_centerInParent="true"
                     android:rotation="-10"
-                    android:elevation="10dp"/>
+                    android:elevation="@dimen/card_album_elevation"/>
             </RelativeLayout>
 
             <LinearLayout
@@ -45,8 +45,8 @@
                     android:id="@+id/linear_size"
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="@dimen/card_album_size_margin_bottom"
+                    android:layout_marginTop="@dimen/card_album_size_margin_top"
                     android:orientation="horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
@@ -95,21 +95,21 @@
                 <TextView
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:layout_marginTop="5sp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="@dimen/card_album_desc_margin_top"
+                    android:layout_marginLeft="@dimen/card_album_desc_margin_left"
+                    android:layout_marginRight="@dimen/card_album_desc_margin_right"
                     android:text="Select upto 30 photos with free album cover to go with them"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
                 <Button
                     android:id="@+id/bt_card_album_create"
-                    android:layout_marginTop="45dp"
+                    android:layout_marginTop="@dimen/card_album_btn_margin_top"
                     android:text="CREATE ALBUM"
                     style="@style/buttonStyle"
                     android:textColor="@color/colorPrimary"
                     android:background="@drawable/button_album_card"
-                    android:layout_width="150dp"
+                    android:layout_width="@dimen/card_album_btn_width"
                     android:layout_height="wrap_content" />
             </LinearLayout>
         </LinearLayout>

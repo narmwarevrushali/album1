@@ -6,7 +6,7 @@
 
 <android.support.v7.widget.CardView
     android:id="@+id/card_coupon"
-    android:layout_margin="5dp"
+    android:layout_margin="@dimen/coupon_card_margin"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -14,10 +14,10 @@
 
     <LinearLayout
         android:id="@+id/invoice_linear"
-        android:padding="10dp"
+        android:padding="@dimen/coupon_item_padding"
         android:gravity="center"
         android:layout_centerInParent="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/coupon_item_margin_top"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -27,10 +27,10 @@
 
             <TextView
                 android:id="@+id/txt_cpn_amt"
-                android:padding="8dp"
+                android:padding="@dimen/coupon_txt_padding"
                 android:layout_below="@+id/txt_cpn_name"
-                android:text="Get Rs. 100 oFF"
-                android:layout_marginTop="2dp"
+                android:text="Get Rs. 100 OFF"
+                android:layout_marginTop="@dimen/coupon_title_margin_top"
                 style="@style/textStyle"
                 android:textAllCaps="true"
                 android:layout_width="wrap_content"
@@ -38,7 +38,7 @@
 
             <TextView
                 android:id="@+id/txt_cpn_name"
-                android:padding="8dp"
+                android:padding="@dimen/coupon_txt_padding"
                 android:text="Wedding"
                 android:singleLine="true"
                 android:ellipsize="end"
@@ -47,7 +47,7 @@
                 android:gravity="center"
                 android:background="@drawable/button_coupon_dotted"
                 android:textAllCaps="true"
-                android:layout_marginLeft="7dp"
+                android:layout_marginLeft="@dimen/coupon_title_margin_left"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content">
             <TextView
                 android:layout_weight="1"
-                android:padding="8dp"
+                android:padding="@dimen/coupon_txt_padding"
                 android:text="Terms and Conditions"
                 style="@style/textStyle"
                 android:textColor="@color/grey_800"
@@ -72,10 +72,10 @@
                 android:layout_height="wrap_content">
             <TextView
                 android:layout_weight="1"
-                android:paddingTop="2dp"
-                android:paddingBottom="2dp"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
+                android:paddingTop="@dimen/coupon_txt_paddingTop"
+                android:paddingBottom="@dimen/coupon_txt_paddingBottom"
+                android:paddingLeft="@dimen/coupon_txt_paddingLeft"
+                android:paddingRight="@dimen/coupon_txt_paddingLeft"
                 android:text="Minimum Transaction"
                 style="@style/textStyle"
                 android:textColor="@color/grey_800"
@@ -85,8 +85,8 @@
                 <TextView
                     android:id="@+id/txt_min_amt"
                     android:layout_weight="1"
-                    android:paddingTop="2dp"
-                    android:paddingBottom="2dp"
+                    android:paddingTop="@dimen/coupon_txt_paddingTop"
+                    android:paddingBottom="@dimen/coupon_txt_paddingBottom"
                     android:text="Rs. 500"
                     style="@style/textStyle"
                     android:layout_width="wrap_content"
@@ -96,11 +96,11 @@
             <Button
                 android:id="@+id/btn_apply"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:paddingRight="2dp"
-                android:paddingLeft="2dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
+                android:layout_marginTop="@dimen/coupon_btn_margin_top"
+                android:paddingRight="@dimen/coupon_btn_padding_right"
+                android:paddingLeft="@dimen/coupon_btn_paddingLeft"
+                android:paddingTop="@dimen/coupon_btn_paddingTop"
+                android:paddingBottom="@dimen/coupon_btn_paddingBottom"
                 android:background="@drawable/button_shape_order"
                 android:textAllCaps="false"
                 style="@style/buttonStyle"

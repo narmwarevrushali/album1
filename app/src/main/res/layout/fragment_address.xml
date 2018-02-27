@@ -12,21 +12,21 @@
         android:layout_height="match_parent">
 
         <RelativeLayout
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:paddingLeft="@dimen/prof_name_rltv_padding_left"
+            android:paddingRight="@dimen/prof_name_rltv_pading_right"
+            android:layout_marginTop="@dimen/prof_name_rltv_margin_top"
+            android:layout_marginBottom="@dimen/prof_name_rltv_margin_bottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/prof_img"
-            android:elevation="5dp"
+            android:elevation="@dimen/prof_img_elevation"
             android:layout_alignParentRight="true"
-            android:layout_width="110dp"
-            android:layout_height="110dp" />
+            android:layout_width="@dimen/prof_img_width"
+            android:layout_height="@dimen/prof_img_height" />
         <LinearLayout
-            android:padding="8dp"
-            android:layout_marginRight="5dp"
+            android:padding="@dimen/prof_name_root_padding"
+            android:layout_marginRight="@dimen/prof_name_root_margin_right"
             android:layout_alignParentLeft="true"
             android:layout_toLeftOf="@id/prof_img"
             android:orientation="vertical"
@@ -60,9 +60,9 @@
         <android.support.v7.widget.CardView
             android:id="@+id/details_card"
             app:cardUseCompatPadding="true"
-            app:cardCornerRadius="4dp"
-            android:elevation="10dp"
-            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="@dimen/prof_card_corner"
+            android:elevation="@dimen/prof_card_elevation"
+            android:layout_marginBottom="@dimen/prof_card_margin_bottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 <LinearLayout
@@ -70,13 +70,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <android.support.design.widget.TextInputLayout
-        android:layout_margin="5dp"
+        android:layout_margin="@dimen/prof_txt_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <EditText
             android:id="@+id/edt_addr"
             style="@style/textStyle"
-            android:padding="10dp"
+            android:padding="@dimen/prof_txt_padding"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Address"
@@ -84,7 +84,7 @@
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
-        android:layout_margin="5dp"
+        android:layout_margin="@dimen/prof_txt_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <EditText
@@ -92,7 +92,7 @@
             android:maxLines="1"
             android:inputType="text"
             android:singleLine="true"
-            android:padding="10dp"
+            android:padding="@dimen/prof_txt_padding"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="State"
@@ -101,12 +101,12 @@
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
-        android:layout_margin="5dp"
+        android:padding="@dimen/prof_txt_padding"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <EditText
             android:id="@+id/edt_dist"
-            android:padding="10dp"
+            android:padding="@dimen/prof_txt_padding"
             android:inputType="text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -118,14 +118,14 @@
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:padding="@dimen/prof_txt_padding"
         >
         <EditText
             android:id="@+id/edt_city"
             android:maxLines="1"
             android:inputType="text"
             android:singleLine="true"
-            android:padding="10dp"
+            android:padding="@dimen/prof_txt_padding"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="City"
@@ -134,7 +134,7 @@
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
-        android:layout_margin="5dp"
+        android:padding="@dimen/prof_txt_padding"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <EditText
@@ -142,7 +142,7 @@
             android:inputType="text"
             android:maxLines="1"
             android:singleLine="true"
-            android:padding="10dp"
+            android:padding="@dimen/prof_txt_padding"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Pin code"
@@ -151,7 +151,7 @@
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
-        android:layout_margin="5dp"
+        android:padding="@dimen/prof_txt_padding"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <EditText
@@ -161,7 +161,7 @@
             android:digits="0123456789"
             android:maxLines="1"
             android:singleLine="true"
-            android:padding="10dp"
+            android:padding="@dimen/prof_txt_padding"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Mobile"
@@ -183,7 +183,7 @@
             <Button
                 android:id="@+id/btn_submit"
                 android:text="Submit"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimen/prof_btn_margin"
                 style="@style/buttonStyle"
                 android:background="@drawable/button_shape"
                 android:layout_width="wrap_content"
@@ -194,7 +194,7 @@
                 android:text="Cancel"
                 style="@style/buttonStyle"
                 android:textColor="@color/colorPrimary"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimen/prof_btn_margin"
                 android:background="@drawable/button_dialog"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />

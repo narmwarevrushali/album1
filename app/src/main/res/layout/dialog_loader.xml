@@ -10,9 +10,9 @@
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        app:progress_max="100"
-       app:progress_text_size="20sp"
+       app:progress_text_size="@dimen/loading_progress_text_size"
        app:progress_current="1"
-       android:layout_marginTop="10dp"
+       android:layout_marginTop="@dimen/loading_progress_margin"
        style="@style/NumberProgressBar_Default"/>
    <!-- <narmware.com.photouploadcopy.support.NewtonCradleLoading
         android:id="@+id/newton"
@@ -33,7 +33,7 @@
 
     <pl.droidsonroids.gif.GifImageView
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="@dimen/splash_img_height"
         android:layout_centerInParent="true"
         android:src="@drawable/loading"
         />

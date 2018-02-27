@@ -7,7 +7,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
-        android:padding="5dp"
+        android:padding="@dimen/cart_details_padding"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -33,11 +33,11 @@
     <LinearLayout
         android:background="@color/grey_400"
         android:layout_width="match_parent"
-        android:layout_height="1dp"/>
+        android:layout_height="@dimen/horizontal_line_height"/>
 
 
     <RelativeLayout
-        android:padding="5dp"
+        android:padding="@dimen/cart_details_padding"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -56,7 +56,7 @@
 
             <ImageView
                 app:srcCompat="@drawable/ic_shipping"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="@dimen/cart_drawable_margin_left"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -74,11 +74,10 @@
     <LinearLayout
         android:background="@color/grey_400"
         android:layout_width="match_parent"
-        android:layout_height="1dp"/>
-
+        android:layout_height="@dimen/horizontal_line_height"/>
 
     <RelativeLayout
-        android:padding="5dp"
+        android:padding="@dimen/cart_details_padding"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -97,7 +96,7 @@
 
             <ImageView
                 app:srcCompat="@drawable/ic_redeem_black_24dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="@dimen/cart_drawable_margin_left"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 </LinearLayout>
@@ -114,10 +113,10 @@
     <LinearLayout
         android:background="@color/grey_400"
         android:layout_width="match_parent"
-        android:layout_height="1dp"/>
+        android:layout_height="@dimen/horizontal_line_height"/>
 
     <RelativeLayout
-        android:padding="5dp"
+        android:padding="@dimen/cart_details_padding"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 

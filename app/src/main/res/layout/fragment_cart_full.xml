@@ -21,8 +21,8 @@
 
         <android.support.v7.widget.CardView
             android:id="@+id/cart_items"
-            app:cardCornerRadius="4dp"
-            android:layout_margin="8dp"
+            app:cardCornerRadius="@dimen/cart_full_top_lay_corner"
+            android:layout_margin="@dimen/cart_full_top_lay_margin"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content">
                 <LinearLayout
                     android:id="@+id/item_cart"
-                    android:layout_margin="8dp"
+                    android:layout_margin="@dimen/cart_full_top_lay_margin"
                     android:orientation="horizontal"
                     android:layout_alignParentTop="true"
                     android:gravity="center"
@@ -40,25 +40,25 @@
 
                     <android.support.v7.widget.CardView
                         android:layout_weight="1"
-                        android:layout_marginLeft="2dp"
-                        android:layout_marginTop="2dp"
-                        android:layout_marginBottom="2dp"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp">
+                        android:layout_marginLeft="@dimen/cart_full_item_img_bg_margin"
+                        android:layout_marginTop="@dimen/cart_full_item_img_bg_margin"
+                        android:layout_marginBottom="@dimen/cart_full_item_img_bg_margin"
+                        android:layout_width="@dimen/cart_full_item_img_bg_width"
+                        android:layout_height="@dimen/cart_full_item_img_bg_height">
 
                         <ImageView
                             android:id="@+id/item_img"
                             android:layout_gravity="center"
                             app:srcCompat="@drawable/hardcover"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp" />
+                            android:layout_width="@dimen/cart_full_item_img_width"
+                            android:layout_height="@dimen/cart_full_item_img_height" />
                     </android.support.v7.widget.CardView>
                     <LinearLayout
                         android:id="@+id/item_details"
                         android:layout_weight="1"
                         android:orientation="vertical"
                         android:gravity="center"
-                        android:padding="10dp"
+                        android:padding="@dimen/cart_full_item_details_padding"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
                         <LinearLayout
@@ -106,17 +106,17 @@
 
                 <LinearLayout
                     android:layout_below="@id/item_cart"
-                    android:layout_marginTop="2dp"
+                    android:layout_marginTop="@dimen/cart_full_horizontal_marginTop"
                     android:id="@+id/linear_line"
                     android:orientation="horizontal"
                     android:background="@color/grey_200"
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"/>
+                    android:layout_height="@dimen/horizontal_line_height"/>
 
                 <LinearLayout
                     android:layout_below="@+id/linear_line"
                     android:gravity="right"
-                    android:layout_margin="5dp"
+                    android:layout_margin="@dimen/cart_full_cart_details_margin"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -211,10 +211,10 @@
             android:textColor="@color/colorPrimary"
             android:background="@android:color/transparent"
             android:gravity="center"
-            android:padding="8dp"
-            android:layout_margin="2dp"
-            android:minWidth="1dp"
-            android:minHeight="1dp"
+            android:padding="@dimen/cart_full_addFrnd_btn_padding"
+            android:layout_margin="@dimen/cart_full_addFrnd_btn_margin"
+            android:minWidth="@dimen/cart_full_addFrnd_btn_minWidth"
+            android:minHeight="@dimen/cart_full_addFrnd_btn_minHeight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </RelativeLayout>
@@ -243,9 +243,9 @@
     android:id="@+id/rltv_btn_coupon"
     android:background="@drawable/button_coupon"
     android:layout_weight="1"
-    android:layout_margin="2dp"
-    android:paddingLeft="5dp"
-    android:paddingRight="8dp"
+    android:layout_margin="@dimen/cart_full_coupon_btn_margin"
+    android:paddingLeft="@dimen/cart_full_coupon_btn_paddingLeft"
+    android:paddingRight="@dimen/cart_full_coupon_btn_paddingRight"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <Button
@@ -272,7 +272,7 @@
 
         <Button
             android:layout_weight="1"
-            android:layout_margin="2dp"
+            android:layout_margin="@dimen/cart_full_makePay_btn_margin"
             android:id="@+id/send_cart"
             android:background="@drawable/button_dialog"
             android:text="Make Payment"

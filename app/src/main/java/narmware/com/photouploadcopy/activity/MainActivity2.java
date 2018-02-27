@@ -410,7 +410,7 @@ public class MainActivity2 extends AppCompatActivity implements AddFrndsForCartF
                 int response= Integer.parseInt(addressResponse.getResponse());
                 if(response==Constants.PROFILE_RESPONSE)
                 {
-                    Toast.makeText(MainActivity2.this, "Profile updated successfully", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(MainActivity2.this, "Profile updated successfully", Toast.LENGTH_SHORT).show();
                     DatabaseAccess databaseAccess = DatabaseAccess.getInstance(MainActivity2.this);
                     databaseAccess.open();
                     databaseAccess.UpdateUserProfile(null,mState,mDist,mCity,mPin,null,SharedPreferencesHelper.getUserId(MainActivity2.this));

@@ -8,17 +8,17 @@
 
 
     <ImageView
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="@dimen/no_connect_img_margin_top"
         app:srcCompat="@drawable/no_internet"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="@dimen/no_connect_img_margin_width"
+        android:layout_height="@dimen/no_connect_img_margin_height"
         android:layout_centerHorizontal="true"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="@dimen/no_connect_bottom_linear_margin"
         android:layout_centerHorizontal="true"
         android:layout_above="@+id/dialog_bottom_root">
 
@@ -28,7 +28,7 @@
             android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
+            style="@style/big_title_textStyle"
             android:textColor="@android:color/black"
             android:fontFamily="sans-serif"
             android:text="No connection"
@@ -40,8 +40,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:textSize="18sp"
-            android:layout_marginTop="10dp"
+            style="@style/small_title_textStyle"
+            android:layout_marginTop="@dimen/no_connect_bottom_text_margin"
             android:fontFamily="sans-serif"
             />
 

@@ -10,12 +10,12 @@
         android:layout_width="match_parent"
         android:gravity="center"
         android:orientation="vertical"
-        android:layout_height="200dp">
+        android:layout_height="@dimen/prof_dialog_top_linear_height">
         <ImageView
             android:id="@+id/prof_logo"
             app:srcCompat="@drawable/ic_location_white"
-            android:layout_width="50dp"
-            android:layout_height="50dp" />
+            android:layout_width="@dimen/dialog_img_width"
+            android:layout_height="@dimen/dialog_img_height" />
 
         <TextView
             android:id="@+id/prof_title"
@@ -24,16 +24,16 @@
             style="@style/small_title_textStyle"
             android:text="Enter your address"
             android:textColor="@android:color/white"
-            android:textSize="20dp" />
+             />
     </LinearLayout>
 
     <EditText
         android:id="@+id/edt_prof"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginLeft="@dimen/dialog_txt_margin_left"
+        android:layout_marginRight="@dimen/dialog_txt_margin_right"
+        android:layout_marginTop="@dimen/dialog_txt_margin_top"
         style="@style/textStyle"
-        android:padding="10dp"
+        android:padding="@dimen/dialog_txt_padding"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Address"
@@ -41,7 +41,7 @@
 
     <LinearLayout
         android:id="@+id/linear_bottom"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/dialog_btn_linear_margin_top"
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_width="match_parent"
@@ -50,7 +50,7 @@
         <Button
             android:id="@+id/btn_submit"
             android:text="Submit"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/pin_dialog_btn_margin"
             style="@style/buttonStyle"
             android:background="@drawable/button_shape"
             android:layout_width="wrap_content"
@@ -61,7 +61,7 @@
             android:text="Cancel"
             style="@style/buttonStyle"
             android:textColor="@color/colorPrimary"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/pin_dialog_btn_margin"
             android:background="@drawable/button_dialog"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

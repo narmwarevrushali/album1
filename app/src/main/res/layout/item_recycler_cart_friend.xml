@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        app:cardCornerRadius="4dp"
+        app:cardCornerRadius="@dimen/prof_card_corner"
         app:cardUseCompatPadding="true">
 
         <LinearLayout
@@ -32,7 +32,7 @@
                     android:singleLine="true"
                     android:ellipsize="end"
                     android:gravity="center"
-                    android:padding="8dp"
+                    android:padding="@dimen/cart_frnd_txt_padding"
                     android:text="Hello" />
 
                 <Button
@@ -51,7 +51,7 @@
                 <CheckBox
                     android:id="@+id/chk_self"
                     android:layout_alignParentRight="true"
-                    android:padding="10dp"
+                    android:padding="@dimen/cart_frnd_check_padding"
                     android:layout_centerVertical="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -68,11 +68,11 @@
 
                     <ImageButton
                         android:id="@+id/fab_delete_item"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
-                        android:padding="2dp"
+                        android:layout_width="@dimen/cart_frnd_btn_width"
+                        android:layout_height="@dimen/cart_frnd_btn_height"
+                        android:layout_marginLeft="@dimen/cart_frnd_btn_margin_left"
+                        android:layout_marginRight="@dimen/cart_frnd_btn_margin_right"
+                        android:padding="@dimen/cart_frnd_btn_padding"
                         android:background="@drawable/button_fab"
                         app:srcCompat="@drawable/ic_remove" />
 
@@ -82,19 +82,19 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:layout_margin="5dp"
+                        android:layout_margin="@dimen/cart_frnd_count_margin"
                         android:gravity="center"
-                        android:paddingLeft="2dp"
-                        android:paddingRight="2dp"
+                        android:paddingLeft="@dimen/cart_frnd_count_padding"
+                        android:paddingRight="@dimen/cart_frnd_count_padding"
                         android:text="1" />
 
                     <ImageButton
                         android:id="@+id/fab_add_item"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
-                        android:padding="2dp"
+                        android:layout_width="@dimen/cart_frnd_btn_width"
+                        android:layout_height="@dimen/cart_frnd_btn_height"
+                        android:layout_marginLeft="@dimen/cart_frnd_btn_margin_left"
+                        android:layout_marginRight="@dimen/cart_frnd_btn_margin_right"
+                        android:padding="@dimen/cart_frnd_btn_padding"
                         android:background="@drawable/button_fab"
                         app:srcCompat="@drawable/ic_add" />
                 </LinearLayout>

@@ -10,13 +10,15 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp">
+        android:layout_height="?attr/actionBarSize">
+
         <TextView
-            android:text="Select a frame for album"
+            android:id="@+id/txtPay"
+            android:padding="@dimen/page_title_padding"
+            style="@style/small_title_textStyle"
             android:textColor="@color/colorPrimary"
-            android:textSize="15sp"
-            android:fontFamily="sans-serif-condensed"
             android:layout_centerInParent="true"
+            android:text="Select a frame for album"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </RelativeLayout>

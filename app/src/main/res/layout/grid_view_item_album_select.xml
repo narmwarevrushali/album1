@@ -20,7 +20,7 @@
         android:layout_gravity="bottom"
         android:background="@color/multiple_image_select_albumTextBackground"
         android:textColor="@color/multiple_image_select_primaryText"
-        android:textSize="20dp"
+        style="@style/big_title_textStyle"
         android:lines="1"
         android:gravity="center"/>
 

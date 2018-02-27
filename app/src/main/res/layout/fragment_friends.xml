@@ -25,9 +25,9 @@
 
     <TextView
         android:id="@+id/frnd_title"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginTop="@dimen/frnd_list_title_marginTop"
+        android:layout_marginBottom="@dimen/frnd_list_title_marginBottom"
+        android:layout_marginLeft="@dimen/frnd_list_title_marginLeft"
         android:text="My Friends"
         style="@style/big_title_textStyle"
         android:layout_width="match_parent"
@@ -38,14 +38,13 @@
         android:id="@+id/recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="3dp"
+        android:layout_margin="@dimen/recycler_margin"
         android:scrollbars="vertical"/>
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/btn_add_frnd"
         app:srcCompat="@drawable/ic_add"
-        android:layout_marginBottom="15dp"
-        android:layout_marginRight="15dp"
-        android:padding="10dp"
+        android:layout_marginBottom="@dimen/frnd_list_fab_marginBottom"
+        android:layout_marginRight="@dimen/frnd_list_fab_marginRight"
         app:fabSize="normal"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"

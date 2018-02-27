@@ -309,7 +309,7 @@ public class FriendsProfileFragment extends Fragment implements View.OnClickList
             mProgress = new ProgressDialog(getContext());
             mProgress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
             mProgress.setIndeterminate(true);
-            mProgress.setMessage("Updating Profile");
+            mProgress.setMessage("Adding friend");
             mProgress.setCancelable(false);
             mProgress.show();
         }
@@ -384,7 +384,7 @@ public class FriendsProfileFragment extends Fragment implements View.OnClickList
                     }
 
                     flag="selected";
-                    Toast.makeText(getContext(), "Profile updated successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Friend added successfully", Toast.LENGTH_SHORT).show();
                 }
                 if(response==Constants.ALREADY_PRESENT)
                 {

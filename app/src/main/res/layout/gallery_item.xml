@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="100dp"
-    android:layout_height="100dp">
+    android:layout_width="@dimen/gallery_item_width"
+    android:layout_height="@dimen/gallery_item_height" >
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:background="@drawable/img_shape"
@@ -22,9 +22,9 @@
     <ImageView
         android:id="@+id/img"
         android:scaleType="fitCenter"
-        android:layout_margin="2dp"
-        android:layout_width="100dp"
-        android:layout_height="100dp" />
+        android:layout_margin="@dimen/gallery_item_margin"
+        android:layout_width="@dimen/gallery_item_width"
+        android:layout_height="@dimen/gallery_item_height" />
 
         </RelativeLayout>
 </RelativeLayout>

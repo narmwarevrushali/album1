@@ -15,14 +15,13 @@
     <RelativeLayout
         android:layout_alignParentTop="true"
         android:background="@color/grey_1000w"
-        android:elevation="5dp"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize">
 
         <LinearLayout
             android:clickable="true"
             android:gravity="center"
-            android:layout_width="60dp"
+            android:layout_width="@dimen/back_btn_width"
             android:layout_height="match_parent">
         <ImageButton
             android:id="@+id/btn_back"
@@ -41,7 +40,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             style="@style/small_title_textStyle"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="@dimen/img_select_title_margin"
             android:text="Selected Images"/>
 
     </RelativeLayout>
@@ -55,15 +54,15 @@
         android:layout_height="wrap_content" />
 
     <GridView
-        android:padding="8dp"
+        android:padding="@dimen/grid_view_padding"
         android:layout_above="@+id/btn_upload"
         android:layout_below="@id/toolbar_relative"
         android:id="@+id/PhoneImageGrid"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:numColumns="3"
-        android:verticalSpacing="10dp"
-        android:horizontalSpacing="8dp"
+        android:verticalSpacing="@dimen/grid_view_spacing_vertical"
+        android:horizontalSpacing="@dimen/grid_view_spacing_horizontal"
         />
 
     <Button

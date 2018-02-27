@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:padding="15dp"
-    android:minWidth="300dp"
+    android:padding="@dimen/pin_dialog_padding"
+    android:minWidth="@dimen/pin_dialog_minWidth"
     android:background="@android:color/white">
 
     <pl.droidsonroids.gif.GifImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="@dimen/pin_dialog_img_width"
+        android:layout_height="@dimen/pin_dialog_img_height"
         android:src="@drawable/location"
         />
 
@@ -22,12 +22,12 @@
         android:layout_height="wrap_content" />
 
     <AutoCompleteTextView
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/pin_dialog_autocomplete_margin_top"
         android:id="@+id/edt_pin"
         android:gravity="center"
         android:background="@android:color/transparent"
         style="@style/textStyle"
-        android:padding="10dp"
+        android:padding="@dimen/pin_dialog_autocomplete_padding"
         android:inputType="number"
         android:digits="0123456789"
         android:maxLength="6"
@@ -39,9 +39,9 @@
     <LinearLayout
         android:background="@color/grey_200"
         android:layout_width="match_parent"
-        android:layout_height="1dp"></LinearLayout>
+        android:layout_height="@dimen/horizontal_line_height"></LinearLayout>
     <LinearLayout
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="@dimen/pin_dialog_btn_linear_margin_top"
         android:id="@+id/linear_bottom"
         android:orientation="horizontal"
         android:gravity="center"
@@ -54,14 +54,14 @@
             style="@style/buttonStyle"
             android:background="@android:color/transparent"
             android:textColor="@color/light_blue_A700"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/pin_dialog_btn_margin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <Button
             android:id="@+id/btn_submit"
             android:text="Submit"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/pin_dialog_btn_margin"
             style="@style/buttonStyle"
             android:background="@drawable/button_shape_order"
             android:layout_width="wrap_content"

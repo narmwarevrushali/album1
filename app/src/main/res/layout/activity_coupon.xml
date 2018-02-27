@@ -9,11 +9,11 @@
     <LinearLayout
         android:orientation="horizontal"
         android:id="@+id/linear_line"
-        android:layout_margin="2dp"
+        android:layout_margin="@dimen/coupon_horizontal_line_margin"
         android:background="@color/grey_200"
         android:layout_below="@+id/txtPay"
         android:layout_width="match_parent"
-        android:layout_height="1dp"/>
+        android:layout_height="@dimen/horizontal_line_height"/>
 
     <LinearLayout
         android:id="@+id/empty_coupon"
@@ -24,8 +24,8 @@
         android:layout_height="wrap_content">
         <ImageView
             app:srcCompat="@drawable/ic_invoice"
-            android:layout_width="50dp"
-            android:layout_height="50dp" />
+            android:layout_width="@dimen/empty_view_width"
+            android:layout_height="@dimen/empty_view_height" />
         <TextView
             android:text="No coupons available"
             style="@style/textStyle"
@@ -36,7 +36,7 @@
 
     <TextView
         android:id="@+id/txtPay"
-        android:padding="8dp"
+        android:padding="@dimen/page_title_padding"
         style="@style/small_title_textStyle"
         android:layout_centerHorizontal="true"
         android:text="My Coupons"
@@ -48,6 +48,6 @@
         android:layout_below="@id/linear_line"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="3dp"
+        android:layout_margin="@dimen/recycler_margin"
         android:scrollbars="vertical"/>
 </RelativeLayout>

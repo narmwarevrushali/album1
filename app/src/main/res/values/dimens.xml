@@ -5,4 +5,211 @@
     <dimen name="fab_margin">16dp</dimen>
 
     <dimen name="cradle_ball_margin">5dp</dimen>
+
+    <dimen name="splash_img_height">300dp</dimen>
+    <dimen name="splash_img_width">300dp</dimen>
+
+    <dimen name="app_bar_img_width">70dp</dimen>
+
+    <dimen name="coupon_horizontal_line_margin">2dp</dimen>
+
+    <dimen name="horizontal_line_height">1dp</dimen>
+    <dimen name="empty_view_width">50dp</dimen>
+    <dimen name="empty_view_height">50dp</dimen>
+    <dimen name="page_title_padding">8dp</dimen>
+    <dimen name="recycler_margin">3dp</dimen>
+
+    <dimen name="login_card_elevation">5dp</dimen>
+    <dimen name="login_card_margin">10dp</dimen>
+    <dimen name="sign_in_relative">150dp</dimen>
+    <dimen name="sign_in_padding">4dp</dimen>
+    <dimen name="sign_in_height">45dp</dimen>
+    <dimen name="sign_in_img_height">40dp</dimen>
+    <dimen name="sign_in_img_width">40dp</dimen>
+    <dimen name="sign_in_btn_padding">8dp</dimen>
+
+    <dimen name="back_btn_width">60dp</dimen>
+    <dimen name="img_select_title_margin">10dp</dimen>
+
+    <dimen name="grid_view_padding">8dp</dimen>
+    <dimen name="grid_view_spacing_vertical">10dp</dimen>
+    <dimen name="grid_view_spacing_horizontal">8dp</dimen>
+
+    <dimen name="card_album_top_height">300dp</dimen>
+    <dimen name="card_album_top_img_margin">20dp</dimen>
+    <dimen name="card_album_elevation">10dp</dimen>
+
+    <dimen name="card_album_size_margin_top">8dp</dimen>
+    <dimen name="card_album_size_margin_bottom">8dp</dimen>
+    <dimen name="card_album_desc_margin_top">5sp</dimen>
+    <dimen name="card_album_desc_margin_left">30dp</dimen>
+    <dimen name="card_album_desc_margin_right">30dp</dimen>
+    <dimen name="card_album_btn_margin_top">45dp</dimen>
+    <dimen name="card_album_btn_width">150dp</dimen>
+
+    <dimen name="loading_progress_margin">10dp</dimen>
+    <dimen name="loading_progress_text_size">20sp</dimen>
+
+    <dimen name="no_connect_img_margin_top">50dp</dimen>
+    <dimen name="no_connect_img_margin_height">150dp</dimen>
+    <dimen name="no_connect_img_margin_width">150dp</dimen>
+    <dimen name="no_connect_bottom_linear_margin">25dp</dimen>
+    <dimen name="no_connect_bottom_text_margin">10dp</dimen>
+
+    <dimen name="pin_dialog_padding">15dp</dimen>
+    <dimen name="pin_dialog_minWidth">300dp</dimen>
+    <dimen name="pin_dialog_img_width">100dp</dimen>
+    <dimen name="pin_dialog_img_height">100dp</dimen>
+    <dimen name="pin_dialog_autocomplete_margin_top">10dp</dimen>
+    <dimen name="pin_dialog_autocomplete_padding">10dp</dimen>
+    <dimen name="pin_dialog_btn_linear_margin_top">15dp</dimen>
+    <dimen name="pin_dialog_btn_margin">10dp</dimen>
+
+    <dimen name="prof_dialog_top_linear_height">200dp</dimen>
+    <dimen name="dialog_img_width">50dp</dimen>
+    <dimen name="dialog_img_height">50dp</dimen>
+    <dimen name="dialog_txt_margin_left">10dp</dimen>
+    <dimen name="dialog_txt_margin_right">10dp</dimen>
+    <dimen name="dialog_txt_margin_top">20dp</dimen>
+    <dimen name="dialog_txt_padding">10dp</dimen>
+    <dimen name="dialog_btn_linear_margin_top">20dp</dimen>
+
+    <dimen name="prof_name_rltv_margin_top">10dp</dimen>
+    <dimen name="prof_name_rltv_margin_bottom">10dp</dimen>
+    <dimen name="prof_name_rltv_padding_left">8dp</dimen>
+    <dimen name="prof_name_rltv_pading_right">8dp</dimen>
+    <dimen name="prof_img_elevation">5dp</dimen>
+    <dimen name="prof_img_height">110dp</dimen>
+    <dimen name="prof_img_width">110dp</dimen>
+    <dimen name="prof_img_margin_right">30dp</dimen>
+    <dimen name="prof_name_root_padding">8dp</dimen>
+    <dimen name="prof_name_root_margin_right">5dp</dimen>
+    <dimen name="prof_card_corner">4dp</dimen>
+    <dimen name="prof_card_margin_bottom">10dp</dimen>
+    <dimen name="prof_card_elevation">10dp</dimen>
+    <dimen name="prof_txt_margin">5dp</dimen>
+    <dimen name="prof_txt_padding">10dp</dimen>
+    <dimen name="prof_btn_margin">10dp</dimen>
+
+    <dimen name="prof_coordinator_height">180dp</dimen>
+    <dimen name="prof_bg_height">135dp</dimen>
+    <dimen name="prof_card_item_padding">20dp</dimen>
+    <dimen name="prof_outside_item_padding">8dp</dimen>
+
+    <dimen name="frnd_prof_name_margin_top">20dp</dimen>
+    <dimen name="frnd_prof_name_margin_bottom">20dp</dimen>
+    <dimen name="frnd_prof_name_margin_left">10dp</dimen>
+    <dimen name="frnd_prof_name_padding">10dp</dimen>
+
+    <dimen name="cart_details_padding">5dp</dimen>
+    <dimen name="cart_drawable_margin_left">15dp</dimen>
+
+    <dimen name="intro_linear_margin_top">30dp</dimen>
+    <dimen name="intro_txt_margin">20dp</dimen>
+    <dimen name="intro_img_margin_top">25dp</dimen>
+    <dimen name="intro_img_height">300dp</dimen>
+
+    <dimen name="gallery_item_width">100dp</dimen>
+    <dimen name="gallery_item_height">100dp</dimen>
+    <dimen name="gallery_item_margin">2dp</dimen>
+
+    <dimen name="coupon_card_margin">5dp</dimen>
+    <dimen name="coupon_item_margin_top">20dp</dimen>
+    <dimen name="coupon_item_padding">10dp</dimen>
+    <dimen name="coupon_txt_padding">8dp</dimen>
+    <dimen name="coupon_txt_paddingLeft">8dp</dimen>
+    <dimen name="coupon_txt_paddingBottom">2dp</dimen>
+    <dimen name="coupon_txt_paddingTop">2dp</dimen>
+    <dimen name="coupon_title_margin_top">2dp</dimen>
+    <dimen name="coupon_title_margin_left">7dp</dimen>
+    <dimen name="coupon_btn_margin_top">20dp</dimen>
+    <dimen name="coupon_btn_padding_right">2dp</dimen>
+    <dimen name="coupon_btn_paddingLeft">2dp</dimen>
+    <dimen name="coupon_btn_paddingBottom">10dp</dimen>
+    <dimen name="coupon_btn_paddingTop">10dp</dimen>
+    <dimen name="coupon_btn_width">200dp</dimen>
+
+    <dimen name="cart_frnd_txt_padding">8dp</dimen>
+    <dimen name="cart_frnd_check_padding">10dp</dimen>
+    <dimen name="cart_frnd_btn_padding">2dp</dimen>
+    <dimen name="cart_frnd_btn_height">30dp</dimen>
+    <dimen name="cart_frnd_btn_width">30dp</dimen>
+    <dimen name="cart_frnd_btn_margin_left">5dp</dimen>
+    <dimen name="cart_frnd_btn_margin_right">5dp</dimen>
+    <dimen name="cart_frnd_count_padding">2dp</dimen>
+    <dimen name="cart_frnd_count_margin">5dp</dimen>
+
+    <dimen name="frame_item_height">200dp</dimen>
+    <dimen name="frame_item_padding">10dp</dimen>
+    <dimen name="frame_item_corner">4dp</dimen>
+    <dimen name="frame_item_txt_padding">5dp</dimen>
+
+    <dimen name="frnd_item_padding">5dp</dimen>
+    <dimen name="frnd_item_margin_left">10dp</dimen>
+    <dimen name="frnd_item_round_margin_right">5dp</dimen>
+    <dimen name="frnd_item_round_margin_left">5dp</dimen>
+    <dimen name="frnd_item_round_txt_height">50dp</dimen>
+    <dimen name="frnd_item_round_txt_width">50dp</dimen>
+    <dimen name="frnd_item_txt_padding">5dp</dimen>
+    <dimen name="frnd_item_close_width">40dp</dimen>
+    <dimen name="frnd_item_close_height">40dp</dimen>
+    <dimen name="frnd_item_horizontal_height">2dp</dimen>
+    <dimen name="frnd_item_horizontal_marginTop">15dp</dimen>
+    <dimen name="frnd_item_horizontal_marginBottom">10dp</dimen>
+
+    <dimen name="inv_item_card_height">200dp</dimen>
+    <dimen name="inv_item_card_marginTop">40dp</dimen>
+    <dimen name="inv_item_title_margin_left">15dp</dimen>
+    <dimen name="inv_item_title_elevation">10dp</dimen>
+    <dimen name="inv_item_title_padding">10dp</dimen>
+    <dimen name="inv_item_linear_margin_top">20dp</dimen>
+    <dimen name="inv_item_linear_padding">10dp</dimen>
+    <dimen name="inv_item_date_padding">8dp</dimen>
+    <dimen name="inv_item_albumName_paddingTop">2dp</dimen>
+    <dimen name="inv_item_albumName_paddingBottom">2dp</dimen>
+    <dimen name="inv_item_albumName_paddingRight">5dp</dimen>
+    <dimen name="inv_item_albumName_paddingLeft">5dp</dimen>
+    <dimen name="inv_item_qty_padding">5dp</dimen>
+    <dimen name="inv_item_status_padding">8dp</dimen>
+    <dimen name="inv_item_total_paddingTop">5dp</dimen>
+    <dimen name="inv_item_total_paddingBottom">5dp</dimen>
+    <dimen name="inv_item_total_paddingLeft">10dp</dimen>
+    <dimen name="inv_item_total_paddingRight">10dp</dimen>
+
+    <dimen name="add_cart_frnd_item_check_padding">20dp</dimen>
+    <dimen name="add_cart_frnd_item_padding">20dp</dimen>
+    <dimen name="add_cart_frnd_item_corner">4dp</dimen>
+
+    <dimen name="cart_empty_btn_padding">4dp</dimen>
+    <dimen name="cart_empty_btn_margin_top">70dp</dimen>
+    <dimen name="cart_empty_btn_width">150dp</dimen>
+    <dimen name="cart_empty_msg_margin">20dp</dimen>
+    <dimen name="cart_empty_img_size">100dp</dimen>
+
+    <dimen name="cart_full_top_lay_margin">8dp</dimen>
+    <dimen name="cart_full_top_lay_corner">4dp</dimen>
+    <dimen name="cart_full_item_img_height">80dp</dimen>
+    <dimen name="cart_full_item_img_width">80dp</dimen>
+    <dimen name="cart_full_item_img_bg_width">90dp</dimen>
+    <dimen name="cart_full_item_img_bg_height">90dp</dimen>
+    <dimen name="cart_full_item_img_bg_margin">2dp</dimen>
+    <dimen name="cart_full_item_details_padding">10dp</dimen>
+    <dimen name="cart_full_horizontal_marginTop">2dp</dimen>
+    <dimen name="cart_full_cart_details_margin">5dp</dimen>
+    <dimen name="cart_full_addFrnd_btn_margin">2dp</dimen>
+    <dimen name="cart_full_addFrnd_btn_padding">8dp</dimen>
+    <dimen name="cart_full_addFrnd_btn_minWidth">1dp</dimen>
+    <dimen name="cart_full_addFrnd_btn_minHeight">1dp</dimen>
+    <dimen name="cart_full_coupon_btn_margin">2dp</dimen>
+    <dimen name="cart_full_coupon_btn_paddingLeft">5dp</dimen>
+    <dimen name="cart_full_coupon_btn_paddingRight">8dp</dimen>
+    <dimen name="cart_full_makePay_btn_margin">2dp</dimen>
+    
+    <dimen name="frnd_list_fab_marginBottom">15dp</dimen>
+    <dimen name="frnd_list_fab_marginRight">15dp</dimen>
+    <dimen name="frnd_list_fab_padding">15dp</dimen>
+    <dimen name="frnd_list_title_marginTop">20dp</dimen>
+    <dimen name="frnd_list_title_marginBottom">20dp</dimen>
+    <dimen name="frnd_list_title_marginLeft">10dp</dimen>
+
 </resources>

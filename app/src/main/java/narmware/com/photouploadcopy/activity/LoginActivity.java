@@ -213,8 +213,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         switch (view.getId())
         {
             case R.id.btn_signup_fb:
-               // signIn();
-                personName="Rohit Savant";
+                signIn();
+               /* personName="Rohit Savant";
                 email="savantrohit8@gmail.com";
                 personPhotoUrl="http://narmware.com/kp/avatar.png";
 
@@ -224,7 +224,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                 SharedPreferencesHelper.setUserName(personName,LoginActivity.this);
                 SharedPreferencesHelper.setUserEmail(email,LoginActivity.this);
-                SharedPreferencesHelper.setUserProfPic(personPhotoUrl,LoginActivity.this);
+                SharedPreferencesHelper.setUserProfPic(personPhotoUrl,LoginActivity.this);*/
                 break;
 
         }

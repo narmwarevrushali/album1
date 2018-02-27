@@ -8,6 +8,6 @@
         android:id="@+id/recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="3dp"
+        android:layout_margin="@dimen/recycler_margin"
         android:scrollbars="vertical"/>
 </LinearLayout>

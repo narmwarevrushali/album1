@@ -8,10 +8,9 @@
    >
 
 <android.support.v7.widget.CardView
-    app:cardElevation="5dp"
-    android:elevation="5dp"
+    app:cardElevation="@dimen/login_card_elevation"
     app:cardUseCompatPadding="true"
-    android:layout_margin="10dp"
+    android:layout_margin="@dimen/login_card_margin"
     android:layout_above="@+id/sign_in_relative"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -28,15 +27,15 @@
         android:id="@+id/sign_in_relative"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:layout_height="140dp">
+        android:layout_height="@dimen/sign_in_relative">
 
         <RelativeLayout
             android:id="@+id/rltv_sign_in"
             android:layout_centerInParent="true"
-            android:padding="4dp"
+            android:padding="@dimen/sign_in_padding"
             android:background="@drawable/button_shape_order"
             android:layout_width="wrap_content"
-            android:layout_height="45dp">
+            android:layout_height="@dimen/sign_in_height">
 
             <ImageView
                 app:srcCompat="@drawable/google"
@@ -44,13 +43,13 @@
                 android:layout_centerVertical="true"
                 android:background="@android:color/white"
                 android:layout_alignParentLeft="true"
-                android:layout_width="40dp"
-                android:layout_height="40dp" />
+                android:layout_width="@dimen/sign_in_img_width"
+                android:layout_height="@dimen/sign_in_img_height" />
         <Button
             android:id="@+id/btn_signup_fb"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@id/img_google"
-            android:padding="8dp"
+            android:padding="@dimen/sign_in_btn_padding"
             android:background="@android:color/transparent"
             android:textAllCaps="false"
             style="@style/buttonStyle"
