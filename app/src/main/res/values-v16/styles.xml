@@ -4,24 +4,24 @@
     <style name="textStyle">
         <item name="android:fontFamily">sans-serif-condensed</item>
         <item name="android:textColor">@android:color/black</item>
-        <item name="android:textSize">13sp</item>
+        <item name="android:textSize">@dimen/normal_textSize</item>
     </style>
 
     <style name="small_title_textStyle">
         <item name="android:fontFamily">sans-serif-condensed</item>
         <item name="android:textColor">@android:color/black</item>
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">@dimen/small_title_textSize</item>
     </style>
 
     <style name="big_title_textStyle">
         <item name="android:fontFamily">sans-serif-condensed</item>
         <item name="android:textColor">@android:color/black</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">@dimen/large_title_textSize</item>
     </style>
 
     <style name="buttonStyle">
         <item name="android:fontFamily">sans-serif-condensed</item>
         <item name="android:textColor">@android:color/white</item>
-        <item name="android:textSize">12sp</item>
+        <item name="android:textSize">@dimen/button_textSize</item>
     </style>
 </resources>
