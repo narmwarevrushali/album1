@@ -62,7 +62,9 @@ public class AddressFragment extends Fragment implements View.OnClickListener {
     TextView mProfName,mProfEmail;
     ImageView mProfImg;
     EditText mEdtAddr,mEdtState,mEdtCity,mEdtPin,mEdtDist,mEdtMobile;
+    EditText mEdtArea,mEdtBuildName,mEdtFlatNo,mEdtLandmark;
     String mAddr,mState,mCity,mDist,mPin,mMobile;
+    String mArea,mBuildName,mFlatNo,mLandmark,mAddrLine1;
     String mUserId;
     Button mBtnSubmit,mBtnCancel;
     FragmentManager fragmentManager;
@@ -106,12 +108,17 @@ public class AddressFragment extends Fragment implements View.OnClickListener {
 
     private void init(View view) {
         mJsonParser=new JSONParser();
-
+        String address=null;
         mBtnSubmit=view.findViewById(R.id.btn_submit);
         mBtnCancel=view.findViewById(R.id.btn_cancel);
 
         mBtnSubmit.setOnClickListener(this);
         mBtnCancel.setOnClickListener(this);
+
+        mEdtArea=view.findViewById(R.id.edt_area);
+        mEdtBuildName=view.findViewById(R.id.edt_bld_no);
+        mEdtFlatNo=view.findViewById(R.id.edt_flat_no);
+        mEdtLandmark=view.findViewById(R.id.edt_land);
 
         mEdtAddr=view.findViewById(R.id.edt_addr);
         mEdtState=view.findViewById(R.id.edt_state);
@@ -136,7 +143,28 @@ public class AddressFragment extends Fragment implements View.OnClickListener {
             mPin=userProfile.get(0).getPin();
             mMobile=userProfile.get(0).getMobile();
 
-        mEdtAddr.setText(mAddr);
+        String CurrentString =mAddr;
+
+        try {
+            String[] separated = CurrentString.split("-");
+            address= separated[0].substring(0, separated[0].indexOf(","));
+            mArea = separated[3].substring(0, separated[3].indexOf(","));
+            mBuildName = separated[1].substring(0, separated[1].indexOf(","));
+            mFlatNo = separated[2].substring(0, separated[2].indexOf(","));
+            mLandmark = separated[4];
+        }catch (Exception e)
+        {
+
+        }
+        if(mArea!=null)
+         mEdtArea.setText(mArea);
+        if(mBuildName!=null)
+            mEdtBuildName.setText(mBuildName);
+        if(mFlatNo!=null)
+            mEdtFlatNo.setText(mFlatNo);
+        if(mLandmark!=null)
+            mEdtLandmark.setText(mLandmark);
+        mEdtAddr.setText(address);
         mEdtState.setText(mState);
         mEdtDist.setText(mDist);
         mEdtCity.setText(mCity);
@@ -178,7 +206,13 @@ public class AddressFragment extends Fragment implements View.OnClickListener {
         {
             case R.id.btn_submit:
                 validationFlag=0;
-                mAddr=mEdtAddr.getText().toString().trim();
+                mArea=mEdtArea.getText().toString().trim();
+                mBuildName=mEdtBuildName.getText().toString().trim();
+                mFlatNo=mEdtFlatNo.getText().toString().trim();
+                mLandmark=mEdtLandmark.getText().toString().trim();
+                mAddrLine1=mEdtAddr.getText().toString().trim();
+
+                mAddr=mAddrLine1+",Building name-"+mBuildName+",Flat no-"+mFlatNo+",Area-"+mArea+",Landmark-"+mLandmark;
                 mState=mEdtState.getText().toString().trim();
                 mCity=mEdtCity.getText().toString().trim();
                 mDist=mEdtDist.getText().toString().trim();

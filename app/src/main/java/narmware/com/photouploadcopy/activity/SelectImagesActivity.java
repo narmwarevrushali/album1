@@ -11,6 +11,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
@@ -70,6 +71,7 @@ public class SelectImagesActivity extends AppCompatActivity implements View.OnCl
     private JSONParser mJsonParser;
 
     protected Dialog mNoConnectionDialog;
+    protected Dialog mEmptyProfDialog;
 
     //  NumberProgressBar numberProgressBar;
     private Timer timer;
@@ -167,7 +169,6 @@ public class SelectImagesActivity extends AppCompatActivity implements View.OnCl
 
                 Log.e("Album id",SharedPreferencesHelper.getAlbumId(SelectImagesActivity.this));
                 showUploadProress();
-
                 if(images.size()!=0)
                 {
                     endPosition=images.size()-1;
@@ -433,10 +434,6 @@ public class SelectImagesActivity extends AppCompatActivity implements View.OnCl
         mProgressDialog = new Dialog(this, android.R.style.Theme_Light_NoTitleBar_Fullscreen);
         mProgressDialog.setContentView(R.layout.dialog_loader);
         mProgressDialog.setCancelable(false);
-
-
-        //NewtonCradleLoading loading=  mProgressDialog.findViewById(R.id.newton);
-        //loading.start();
         mProgressDialog.show();
     }
 
@@ -465,5 +462,45 @@ public class SelectImagesActivity extends AppCompatActivity implements View.OnCl
             }
         });
     }
+
+    public void showAddressDialog() {
+        mEmptyProfDialog = new Dialog(SelectImagesActivity.this);
+        mEmptyProfDialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
+        mEmptyProfDialog.setContentView(R.layout.dialog_profile_address);
+        mEmptyProfDialog.setCancelable(false);
+        mEmptyProfDialog.show();
+
+       /* final EditText mEdtprof=mEmptyProfDialog.findViewById(R.id.edt_prof);
+        if (mAddress!=null) {
+            mEdtprof.setText(mAddress);
+        }*/
+        Button cancel = mEmptyProfDialog.findViewById(R.id.btn_cancel);
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mEmptyProfDialog.dismiss();
+            }
+        });
+
+        Button mBtnSubmit=mEmptyProfDialog.findViewById(R.id.btn_submit);
+        mBtnSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /*mAddress=mEdtprof.getText().toString();
+
+                if(mAddress==null)
+                {
+                    Toast.makeText(getContext(), "Please enter address", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    mEmptyProfDialog.dismiss();
+                }*/
+
+                mEmptyProfDialog.dismiss();
+            }
+        });
+
+    }
+
 
 }

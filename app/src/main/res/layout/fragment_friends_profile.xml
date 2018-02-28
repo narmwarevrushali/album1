@@ -44,6 +44,65 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+            <android.support.design.widget.TextInputLayout
+                android:layout_margin="@dimen/prof_txt_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/edt_area"
+                    android:padding="@dimen/prof_txt_padding"
+                    android:inputType="text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Area"
+                    style="@style/textStyle"
+                    />
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_margin="@dimen/prof_txt_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/edt_bld_no"
+                    android:padding="@dimen/prof_txt_padding"
+                    android:inputType="text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Building Number/Name"
+                    style="@style/textStyle"
+                    />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_margin="@dimen/prof_txt_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/edt_flat_no"
+                    android:padding="@dimen/prof_txt_padding"
+                    android:inputType="text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Flat number"
+                    style="@style/textStyle"
+                    />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_margin="@dimen/prof_txt_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/edt_land"
+                    android:padding="@dimen/prof_txt_padding"
+                    android:inputType="text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Landmark"
+                    style="@style/textStyle"
+                    />
+            </android.support.design.widget.TextInputLayout>
+
     <android.support.design.widget.TextInputLayout
         android:layout_margin="@dimen/prof_txt_margin"
         android:layout_width="match_parent"

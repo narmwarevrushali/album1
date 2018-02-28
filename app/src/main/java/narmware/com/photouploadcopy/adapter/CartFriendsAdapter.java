@@ -242,6 +242,8 @@ public class CartFriendsAdapter extends RecyclerView.Adapter<CartFriendsAdapter.
         if(qty==0 || qty==1)
         {
             holder.mFabDelete.setClickable(false);
+            holder.count=1;
+            holder.mTxtSelectionCount.setText(String.valueOf(holder.count));
         }
         else{
             holder.mFabDelete.setClickable(true);

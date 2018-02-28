@@ -63,13 +63,16 @@ public class FriendsProfileFragment extends Fragment implements View.OnClickList
     AutoCompleteTextView mAutoPin;
     private JSONParser mJsonParser;
     EditText mEdtAddr,mEdtState,mEdtCity,mEdtDist,mEdtMobile,mEdtName,mEdtMail;
+    EditText mEdtArea,mEdtBuildName,mEdtFlatNo,mEdtLandmark;
     String mAddr,mState,mCity,mDist,mPin,mMobile,mName,mMail,mFrndServerId;
+    String mArea,mBuildName,mFlatNo,mLandmark,mAddrLine1;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
     String mUserId;
     Button mBtnSubmit,mBtnCancel;
     int validationFlag=0;
     private OnFragmentInteractionListener mListener;
+    String address=null;
 
     public FriendsProfileFragment() {
         // Required empty public constructor
@@ -117,7 +120,29 @@ public class FriendsProfileFragment extends Fragment implements View.OnClickList
                 mMail = friends.getFr_email();
                 mFrndServerId=friends.getF_id();
 
-                mEdtAddr.setText(mAddr);
+                String CurrentString =mAddr;
+
+                try {
+                    String[] separated = CurrentString.split("-");
+                    address= separated[0].substring(0, separated[0].indexOf(","));
+                    mArea = separated[3].substring(0, separated[3].indexOf(","));
+                    mBuildName = separated[1].substring(0, separated[1].indexOf(","));
+                    mFlatNo = separated[2].substring(0, separated[2].indexOf(","));
+                    mLandmark = separated[4];
+                }catch (Exception e)
+                {
+
+                }
+                if(mArea!=null)
+                    mEdtArea.setText(mArea);
+                if(mBuildName!=null)
+                    mEdtBuildName.setText(mBuildName);
+                if(mFlatNo!=null)
+                    mEdtFlatNo.setText(mFlatNo);
+                if(mLandmark!=null)
+                    mEdtLandmark.setText(mLandmark);
+
+                mEdtAddr.setText(address);
                 mEdtState.setText(mState);
                 mEdtDist.setText(mDist);
                 mEdtCity.setText(mCity);
@@ -140,6 +165,11 @@ public class FriendsProfileFragment extends Fragment implements View.OnClickList
 
         mBtnSubmit.setOnClickListener(this);
         mBtnCancel.setOnClickListener(this);
+
+        mEdtArea=view.findViewById(R.id.edt_area);
+        mEdtBuildName=view.findViewById(R.id.edt_bld_no);
+        mEdtFlatNo=view.findViewById(R.id.edt_flat_no);
+        mEdtLandmark=view.findViewById(R.id.edt_land);
 
         mEdtAddr=view.findViewById(R.id.edt_addr);
         mEdtState=view.findViewById(R.id.edt_state);
@@ -200,8 +230,15 @@ public class FriendsProfileFragment extends Fragment implements View.OnClickList
             case R.id.btn_submit:
                 validationFlag=0;
                 String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+                mArea=mEdtArea.getText().toString().trim();
+                mBuildName=mEdtBuildName.getText().toString().trim();
+                mFlatNo=mEdtFlatNo.getText().toString().trim();
+                mLandmark=mEdtLandmark.getText().toString().trim();
+                mAddrLine1=mEdtAddr.getText().toString().trim();
 
-                mAddr=mEdtAddr.getText().toString().trim();
+                mAddr=mAddrLine1+",Building name-"+mBuildName+",Flat no-"+mFlatNo+",Area-"+mArea+",Landmark-"+mLandmark;
+
+               // mAddr=mEdtAddr.getText().toString().trim();
                 mState=mEdtState.getText().toString().trim();
                 mCity=mEdtCity.getText().toString().trim();
                 mDist=mEdtDist.getText().toString().trim();

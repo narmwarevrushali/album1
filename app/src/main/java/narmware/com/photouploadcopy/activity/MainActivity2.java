@@ -493,7 +493,7 @@ public class MainActivity2 extends AppCompatActivity implements AddFrndsForCartF
                 {
                     DatabaseAccess databaseAccess = DatabaseAccess.getInstance(MainActivity2.this);
                     databaseAccess.open();
-                    databaseAccess.setFrndsProfile(null,mState,mDist,mCity,mPin,null,"Self",SharedPreferencesHelper.getUserEmail(MainActivity2.this),mFrndServerId,"0",1);
+                    databaseAccess.setFrndsProfile(null,mState,mDist,mCity,mPin,null,"Self",SharedPreferencesHelper.getUserEmail(MainActivity2.this),mFrndServerId,"1",1);
 
                     List<Friends> temp =databaseAccess.getFriends();
                     for(int c=0;c < temp.size();c++)

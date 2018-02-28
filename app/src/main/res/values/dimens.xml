@@ -78,7 +78,7 @@
     <dimen name="pin_dialog_btn_margin">10dp</dimen>
 
     <!-- dialog profile address/mobile -->
-    <dimen name="prof_dialog_top_linear_height">200dp</dimen>
+    <dimen name="prof_dialog_top_linear_height">140dp</dimen>
     <dimen name="dialog_img_width">50dp</dimen>
     <dimen name="dialog_img_height">50dp</dimen>
     <dimen name="dialog_txt_margin_left">10dp</dimen>
