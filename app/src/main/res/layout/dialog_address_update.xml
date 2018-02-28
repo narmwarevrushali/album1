@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RelativeLayout
+       <!-- <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <LinearLayout
@@ -36,7 +36,7 @@
                     />
             </LinearLayout>
 
-        </RelativeLayout>
+        </RelativeLayout>-->
 
     <ScrollView
         android:layout_width="match_parent"
@@ -70,6 +70,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Area"
+                        android:background="@drawable/dialog_edittext"
                         style="@style/textStyle"
                         />
                 </android.support.design.widget.TextInputLayout>
@@ -131,10 +132,7 @@
                         android:hint="Address"
                         />
                 </android.support.design.widget.TextInputLayout>
-                <android.support.design.widget.TextInputLayout
-                    android:layout_margin="@dimen/prof_txt_margin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+
                     <AutoCompleteTextView
                         android:layout_marginTop="10dp"
                         android:id="@+id/auto_pin"
@@ -147,7 +145,6 @@
                         android:layout_height="wrap_content"
                         android:hint="Pin code"
                         />
-                </android.support.design.widget.TextInputLayout>
                 <android.support.design.widget.TextInputLayout
                     android:layout_margin="@dimen/prof_txt_margin"
                     android:layout_width="match_parent"

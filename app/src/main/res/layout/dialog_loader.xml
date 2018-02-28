@@ -5,6 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white">
+    <LinearLayout
+        android:id="@+id/loader_linear"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
    <com.daimajia.numberprogressbar.NumberProgressBar
        android:id="@+id/number_progress"
        android:layout_width="wrap_content"
@@ -14,27 +20,23 @@
        app:progress_current="1"
        android:layout_marginTop="@dimen/loading_progress_margin"
        style="@style/NumberProgressBar_Default"/>
-   <!-- <narmware.com.photouploadcopy.support.NewtonCradleLoading
-        android:id="@+id/newton"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"/>
--->
-<!--
+
 <TextView
     android:id="@+id/txt_upload_progress"
-    android:layout_below="@id/newton"
-    android:layout_centerHorizontal="true"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="20dp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text=""
+    android:text="Upload in progress please wait"
     android:textColor="@color/colorPrimary"
     style="@style/small_title_textStyle"/>
--->
 
-    <pl.droidsonroids.gif.GifImageView
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/loader_linear"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/splash_img_height"
-        android:layout_centerInParent="true"
-        android:src="@drawable/loading"
-        />
+        android:layout_height="wrap_content">
+        <include layout="@layout/dialog_address_update"></include>
+    </LinearLayout>
     </RelativeLayout>
