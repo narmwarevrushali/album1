@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white">
+    android:background="@color/grey_200">
     <LinearLayout
         android:id="@+id/loader_linear"
+        android:paddingTop="@dimen/loading_progress_paddingTop"
+        android:paddingBottom="@dimen/loading_progress_paddingBottom"
         android:orientation="vertical"
         android:gravity="center"
+        android:background="@android:color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-   <com.daimajia.numberprogressbar.NumberProgressBar
+  <!-- <com.daimajia.numberprogressbar.NumberProgressBar
        android:id="@+id/number_progress"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
@@ -19,12 +23,21 @@
        app:progress_text_size="@dimen/loading_progress_text_size"
        app:progress_current="1"
        android:layout_marginTop="@dimen/loading_progress_margin"
-       style="@style/NumberProgressBar_Default"/>
+       style="@style/NumberProgressBar_Default"/>-->
+
+        <com.github.jlmd.animatedcircleloadingview.AnimatedCircleLoadingView
+            android:id="@+id/number_progress"
+            android:layout_width="@dimen/loading_progress_height"
+            android:layout_height="@dimen/loading_progress_width"
+            android:layout_centerInParent="true"
+            app:mainColor="@color/colorPrimary"
+            app:secondaryColor="@color/secondary_color"
+            app:textColor="@color/colorPrimaryDark"
+            />
 
 <TextView
     android:id="@+id/txt_upload_progress"
-    android:layout_marginTop="20dp"
-    android:layout_marginBottom="20dp"
+    android:layout_marginTop="@dimen/loading_progress_text_marginTop"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="Upload in progress please wait"
@@ -35,6 +48,7 @@
 
     <LinearLayout
         android:layout_below="@+id/loader_linear"
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <include layout="@layout/dialog_address_update"></include>

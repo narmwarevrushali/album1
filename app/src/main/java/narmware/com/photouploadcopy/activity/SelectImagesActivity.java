@@ -3,6 +3,7 @@ package narmware.com.photouploadcopy.activity;
 import android.app.AlarmManager;
 import android.app.Dialog;
 import android.app.PendingIntent;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -11,14 +12,17 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.daimajia.numberprogressbar.NumberProgressBar;
+import com.github.jlmd.animatedcircleloadingview.AnimatedCircleLoadingView;
 import com.google.gson.Gson;
 
 import net.gotev.uploadservice.MultipartUploadRequest;
@@ -39,6 +43,7 @@ import narmware.com.photouploadcopy.adapter.GalleryAdapter;
 import narmware.com.photouploadcopy.broadcast.SingleUploadBroadcastReceiver;
 import narmware.com.photouploadcopy.gallery_activities.AlbumSelectActivity;
 import narmware.com.photouploadcopy.helpers.Constants;
+import narmware.com.photouploadcopy.models.Address;
 import narmware.com.photouploadcopy.models.Image;
 import narmware.com.photouploadcopy.services.AutoUploadService;
 import narmware.com.photouploadcopy.support.DatabaseAccess;
@@ -70,8 +75,14 @@ public class SelectImagesActivity extends AppCompatActivity implements View.OnCl
     private JSONParser mJsonParser;
 
     protected Dialog mNoConnectionDialog;
+    AnimatedCircleLoadingView circleLoading;
     protected Dialog mEmptyProfDialog;
-
+    int validationFlag=0;
+    EditText mEdtAddr,mEdtMobile;
+    EditText mEdtArea,mEdtBuildName,mEdtFlatNo,mEdtLandmark;
+    String mAddress,mState,mCity,mDist,mPin,mMobile;
+    String mArea,mBuildName,mFlatNo,mLandmark,mAddrLine1;
+    Button mProgressBtnSubmit;
     //  NumberProgressBar numberProgressBar;
     private Timer timer;
 
@@ -97,9 +108,6 @@ public class SelectImagesActivity extends AppCompatActivity implements View.OnCl
 
         setUploadEnabled(true);
 
-       /* DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
-        databaseAccess.open();
-        databaseAccess.deleteAll();*/
     }
 
     private void setUploadEnabled(boolean enable) {
@@ -123,8 +131,6 @@ public class SelectImagesActivity extends AppCompatActivity implements View.OnCl
         }
     }
     private void init() {
-
-        //numberProgressBar= (NumberProgressBar) findViewById(R.id.number_progress_bar);
         mJsonParser=new JSONParser();
         mBtnSelect = (Button) findViewById(R.id.btn_upload);
         mBtnSelect.setOnClickListener(this);
@@ -138,11 +144,48 @@ public class SelectImagesActivity extends AppCompatActivity implements View.OnCl
         mImgBack= (ImageButton) findViewById(R.id.btn_back);
         mImgBack.setOnClickListener(this);
 
-        /*mBtnSelectFrame= (Button) findViewById(R.id.btn_select_frame);
-        mBtnSelectFrame.setOnClickListener(this);*/
         temp=new ArrayList<>();
     }
 
+    public void getUserData()
+    {
+        DatabaseAccess databaseAccess = DatabaseAccess.getInstance(SelectImagesActivity.this);
+        databaseAccess.open();
+        ArrayList<Address> userProfile = databaseAccess.getSingleUser();
+
+        mAddress=userProfile.get(0).getAddress();
+        mState=userProfile.get(0).getState();
+        mCity=userProfile.get(0).getCity();
+        mDist=userProfile.get(0).getDist();
+        mPin=userProfile.get(0).getPin();
+        mMobile=userProfile.get(0).getMobile();
+
+        String CurrentString =mAddress;
+
+        try {
+            String[] separated = CurrentString.split("-");
+            mAddrLine1= separated[0].substring(0, separated[0].indexOf(","));
+            mArea = separated[3].substring(0, separated[3].indexOf(","));
+            mBuildName = separated[1].substring(0, separated[1].indexOf(","));
+            mFlatNo = separated[2].substring(0, separated[2].indexOf(","));
+            mLandmark = separated[4];
+        }catch (Exception e)
+        {
+
+        }
+        if(mArea!=null)
+            mEdtArea.setText(mArea);
+        if(mBuildName!=null)
+            mEdtBuildName.setText(mBuildName);
+        if(mFlatNo!=null)
+            mEdtFlatNo.setText(mFlatNo);
+        if(mLandmark!=null)
+            mEdtLandmark.setText(mLandmark);
+        mEdtAddr.setText(mAddrLine1);
+        mEdtMobile.setText(mMobile);
+
+        Log.e("Loader data",mArea+"  "+mMobile);
+    }
 
     @Override
     public void onClick(View view) {
@@ -155,12 +198,6 @@ public class SelectImagesActivity extends AppCompatActivity implements View.OnCl
                 intent.putExtra("count", countSelected);
                 startActivityForResult(intent, Constants.REQUEST_CODE);
                 break;
-
-           /* case R.id.btn_select_frame:
-                Intent intentFrame=new Intent(SelectImagesActivity.this,SelectFrameActivity.class);
-                startActivity(intentFrame);
-               // Toast.makeText(this, "Frame", Toast.LENGTH_SHORT).show();
-                break;*/
 
             case R.id.btn_upload:
 
@@ -333,9 +370,9 @@ public class SelectImagesActivity extends AppCompatActivity implements View.OnCl
 
         Log.e("Progress",""+progress);
 
-        NumberProgressBar mHorizontalProgress =mProgressDialog.findViewById(R.id.number_progress);
-        mHorizontalProgress.setMax(100);
-        mHorizontalProgress.setProgress(progress);
+        if(progress<100) {
+            circleLoading.setPercent(progress);
+        }
     }
 
     @Override
@@ -348,8 +385,9 @@ public class SelectImagesActivity extends AppCompatActivity implements View.OnCl
     public void onError(Exception exception) {
         Log.e("ServerError","Errrrrorrrr!!!!");
         mProgressDialog.dismiss();
-        /*TextView mTxtProgress=mProgressDialog.findViewById(R.id.txt_upload_progress);
-        mTxtProgress.setText(+progress+" %");*/
+
+        TextView mTxtProgress=mProgressDialog.findViewById(R.id.txt_upload_progress);
+        mTxtProgress.setText("Upload Error");
         //Toast.makeText(this, "Ooops! Can't upload images,Server not reachable", Toast.LENGTH_LONG).show();
         showNoConnectionDialog();
     }
@@ -359,15 +397,18 @@ public class SelectImagesActivity extends AppCompatActivity implements View.OnCl
        // mProgressDialog.dismiss();
 
         Log.e("ServerResponse", new String(serverResponseBody)+"   "+serverResponseCode);
+        circleLoading.setPercent(100);
+        circleLoading.stopOk();
 
-        /*TextView mTxtProgress=mProgressDialog.findViewById(R.id.txt_upload_progress);
+        TextView mTxtProgress=mProgressDialog.findViewById(R.id.txt_upload_progress);
         mTxtProgress.setText("Upload Completed");
-        NumberProgressBar mHorizontalProgress =mProgressDialog.findViewById(R.id.number_progress);
-        mHorizontalProgress.setProgress(100);*/
 
-        Intent intentFrame=new Intent(SelectImagesActivity.this,SelectFrameActivity.class);
+        mProgressBtnSubmit.setEnabled(true);
+        mProgressBtnSubmit.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+
+       /* Intent intentFrame=new Intent(SelectImagesActivity.this,SelectFrameActivity.class);
         startActivity(intentFrame);
-        finish();
+        finish();*/
     }
 
     @Override
@@ -438,11 +479,69 @@ public class SelectImagesActivity extends AppCompatActivity implements View.OnCl
         mProgressDialog = new Dialog(this, android.R.style.Theme_Light_NoTitleBar_Fullscreen);
         mProgressDialog.setContentView(R.layout.dialog_loader);
         mProgressDialog.setCancelable(false);
+        mProgressDialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
+        circleLoading =mProgressDialog.findViewById(R.id.number_progress);
+        circleLoading.startDeterminate();
 
-        //NewtonCradleLoading loading=  mProgressDialog.findViewById(R.id.newton);
-        //loading.start();
+        mEdtArea=mProgressDialog.findViewById(R.id.edt_area);
+        mEdtBuildName=mProgressDialog.findViewById(R.id.edt_bld_no);
+        mEdtFlatNo=mProgressDialog.findViewById(R.id.edt_flat_no);
+        mEdtLandmark=mProgressDialog.findViewById(R.id.edt_land);
+
+        mEdtAddr=mProgressDialog.findViewById(R.id.edt_addr);
+        mEdtMobile=mProgressDialog.findViewById(R.id.edt_mobile);
+
         mProgressDialog.show();
+        getUserData();
+
+        mProgressBtnSubmit=mProgressDialog.findViewById(R.id.btn_submit);
+        mProgressBtnSubmit.setEnabled(false);
+        mProgressBtnSubmit.setBackgroundColor(getResources().getColor(R.color.grey_500));
+
+        mProgressBtnSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                validationFlag=0;
+
+                mArea=mEdtArea.getText().toString().trim();
+                mBuildName=mEdtBuildName.getText().toString().trim();
+                mFlatNo=mEdtFlatNo.getText().toString().trim();
+                mLandmark=mEdtLandmark.getText().toString().trim();
+                mAddrLine1=mEdtAddr.getText().toString().trim();
+                mAddress=mAddrLine1+",Building name-"+mBuildName+",Flat no-"+mFlatNo+",Area-"+mArea+",Landmark-"+mLandmark;
+                mMobile=mEdtMobile.getText().toString().trim();
+
+                if(mArea.equals("") || mArea==null)
+                {
+                    validationFlag=1;
+                    Toast.makeText(SelectImagesActivity.this, "Please enter Area", Toast.LENGTH_SHORT).show();
+                    //mEdtArea.setError("Please enter Area");
+                }
+
+                if(mLandmark.equals("") || mLandmark==null)
+                {
+                    validationFlag=1;
+                   // mEdtArea.setError("Please enter Landmark");
+                    Toast.makeText(SelectImagesActivity.this, "Please enter Landmark", Toast.LENGTH_SHORT).show();
+                }
+                if(mAddrLine1.equals("") || mAddrLine1==null)
+                {
+                    validationFlag=1;
+                    Toast.makeText(SelectImagesActivity.this, "Please enter Address", Toast.LENGTH_SHORT).show();
+                    //mEdtArea.setError("Please enter Address");
+                }
+                if(mMobile.length()<10)
+                {
+                    validationFlag=1;
+                    Toast.makeText(SelectImagesActivity.this, "Please enter valid mobile number", Toast.LENGTH_SHORT).show();
+                    //mEdtArea.setError("Please enter Address");
+                }
+                if(validationFlag==0) {
+                    new SendAddress().execute();
+                }
+            }
+        });
     }
 
     private void showNoConnectionDialog() {
@@ -471,5 +570,98 @@ public class SelectImagesActivity extends AppCompatActivity implements View.OnCl
         });
     }
 
+    class SendAddress extends AsyncTask<String, String, String> {
+        protected ProgressDialog mProgress;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            //Toast.makeText(LoginActivity.this,"Pre execute",Toast.LENGTH_SHORT).show();
+            mProgress = new ProgressDialog(SelectImagesActivity.this);
+            mProgress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+            mProgress.setIndeterminate(true);
+            mProgress.setMessage("Updating Address");
+            mProgress.setCancelable(false);
+            mProgress.show();
+
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+            String json = null;
+            try
+            {
+                Gson gson = new Gson();
+                Address address=new Address(null,null,null,null,null,null,null);
+                address.setAddress(mAddress);
+                address.setCity(mCity);
+                address.setState(mState);
+                address.setPin(mPin);
+                address.setDist(mDist);
+                address.setMobile(mMobile);
+                address.setUser_id(SharedPreferencesHelper.getUserId(SelectImagesActivity.this));
+
+                json = gson.toJson(address);
+                Log.e("JSON data updated",json);
+
+                HashMap<String, String> params = new HashMap<>();
+                params.put(Constants.JSON_STRING,json);
+
+                Log.e("JSON data updated ob",json);
+                String url = MyApplication.URL_SERVER + MyApplication.URL_PROFILE_UPDATE;
+                Log.e("JSON data updated url",url);
+                JSONObject ob=mJsonParser.makeHttpRequest(url, "GET",params );
+
+                if (ob == null) {
+                    Log.d("RESPONSE", "ERRORRRRR");
+                }
+                else {
+                    json = ob.toString();
+                }
+            }
+            catch (Exception ex) {
+
+                ex.printStackTrace();
+            }
+
+
+            return json;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+
+            try{Gson gson = new Gson();
+                if (s != null)
+                    Log.e("login data", s);
+
+                else
+                    Log.e("data", "login is null");
+
+                Address addressResponse=gson.fromJson(s,Address.class);
+                Log.e("login data","Response"+addressResponse.getResponse());
+
+                int response= Integer.parseInt(addressResponse.getResponse());
+                if(response==Constants.PROFILE_RESPONSE)
+                {
+                    Toast.makeText(SelectImagesActivity.this, "Profile updated successfully", Toast.LENGTH_SHORT).show();
+                    DatabaseAccess databaseAccess = DatabaseAccess.getInstance(SelectImagesActivity.this);
+                    databaseAccess.open();
+                    databaseAccess.UpdateUserAddress(mAddress, SharedPreferencesHelper.getUserId(SelectImagesActivity.this));
+                    databaseAccess.UpdateUserMobile(mMobile, SharedPreferencesHelper.getUserId(SelectImagesActivity.this));
+
+                    Intent intentFrame=new Intent(SelectImagesActivity.this,SelectFrameActivity.class);
+                    startActivity(intentFrame);
+                    finish();
+                }
+                mProgress.dismiss();
+            }catch (Exception e)
+            {
+                Toast.makeText(SelectImagesActivity.this,"Internet not available,can not update profile",Toast.LENGTH_LONG).show();
+                mProgress.dismiss();
+            }
+        }
+    }
 
 }

@@ -4,6 +4,10 @@
     <color name="colorPrimaryDark">@color/red_600</color>
     <color name="colorAccent">@color/colorPrimary</color>
 
+    <color name="background">#65828e</color>
+    <color name="main_color">#ff9a00</color>
+    <color name="secondary_color">#BDBDBD</color>
+
     <color name="cradle_ball_color">@color/colorPrimary</color>
 
     <color name="multiple_image_select_primary">@color/colorPrimary</color>

@@ -46,6 +46,7 @@ public class SharedPreferencesHelper {
     private static final String PAYMENT_STATUS="status";
 
     private static final String PIN_STATUS="pin_status";
+    private static final String FIRST_INSTALL="install";
 
 //coupon
 private static final String COUPON_NAME="coupon_name";
@@ -217,7 +218,7 @@ private static final String COUPON_NAME="coupon_name";
     public static boolean getIsSendMe(Context context)
     {
         SharedPreferences pref= PreferenceManager.getDefaultSharedPreferences(context);
-        boolean isSendMe=pref.getBoolean(IS_SEND_ME,false);
+        boolean isSendMe=pref.getBoolean(IS_SEND_ME,true);
         return isSendMe;
     }
 

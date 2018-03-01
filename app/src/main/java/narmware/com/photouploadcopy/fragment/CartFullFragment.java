@@ -19,7 +19,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -89,8 +88,8 @@ JSONParser mJsonParser;
     protected RecyclerView mCategoryRecyclerView;
     protected CartFriendsAdapter mCategoryAdapter;
     protected Dialog mNoConnectionDialog;
-    protected Dialog mEmptyProfDialog;
-    protected Dialog mEmptyMobileDialog;
+    //protected Dialog mEmptyProfDialog;
+    //protected Dialog mEmptyMobileDialog;
 
     String totalPics,totalFrnds;
     int AlbumPrice,FramePrice;
@@ -416,7 +415,9 @@ JSONParser mJsonParser;
                     mPin=userProfile.get(0).getPin();
                     mMobile=userProfile.get(0).getMobile();
 
-                    showAddressDialog();
+                    new SendCartData().execute();
+
+                    //showAddressDialog();
                     //int flag=0;
 
                   /*  if (mAddress==null || mAddress.equals("")) {
@@ -636,7 +637,7 @@ JSONParser mJsonParser;
         });
     }
 
-    public void showAddressDialog() {
+    /*public void showAddressDialog() {
         mEmptyProfDialog = new Dialog(getContext());
         mEmptyProfDialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
         mEmptyProfDialog.setContentView(R.layout.dialog_profile_address);
@@ -714,10 +715,10 @@ JSONParser mJsonParser;
             }
         });
 
-    }
+    }*/
 
 
-    class SendAddress extends AsyncTask<String, String, String> {
+    /*class SendAddress extends AsyncTask<String, String, String> {
         protected ProgressDialog mProgress;
 
         @Override
@@ -885,7 +886,6 @@ JSONParser mJsonParser;
                     DatabaseAccess databaseAccess = DatabaseAccess.getInstance(getContext());
                     databaseAccess.open();
                     databaseAccess.UpdateUserMobile(mMobile, SharedPreferencesHelper.getUserId(getContext()));
-                    new SendCartData().execute();
                 }
                 mProgress.dismiss();
             }catch (Exception e)
@@ -988,6 +988,6 @@ JSONParser mJsonParser;
                 //   mProgress.dismiss();
             }
         }
-    }
+    }*/
 
 }

@@ -19,9 +19,12 @@ allprojects {
     repositories {
         jcenter()
         mavenCentral()
-        maven { url "https://jitpack.io" }
+        maven { url "https://jitpack.io"
+        }
 
-
+        maven {
+            url "http://dl.bintray.com/jlmd/maven"
+        }
     }
 }
 

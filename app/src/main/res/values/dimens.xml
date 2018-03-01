@@ -58,6 +58,11 @@
 
     <!-- dialog loader -->
     <dimen name="loading_progress_margin">10dp</dimen>
+    <dimen name="loading_progress_height">140dp</dimen>
+    <dimen name="loading_progress_width">140dp</dimen>
+    <dimen name="loading_progress_paddingTop">20dp</dimen>
+    <dimen name="loading_progress_paddingBottom">20dp</dimen>
+    <dimen name="loading_progress_text_marginTop">2dp</dimen>
     <dimen name="loading_progress_text_size">20sp</dimen>
 
     <!-- dialog no connectivity -->
@@ -103,6 +108,8 @@
     <dimen name="prof_card_elevation">10dp</dimen>
     <dimen name="prof_txt_margin">5dp</dimen>
     <dimen name="prof_txt_padding">10dp</dimen>
+    <dimen name="prof_dialog_txt_padding">4dp</dimen>
+    <dimen name="prof_dialog_horizontal_marginBottom">10dp</dimen>
     <dimen name="prof_btn_margin">10dp</dimen>
 
     <dimen name="prof_coordinator_height">180dp</dimen>

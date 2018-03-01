@@ -4,13 +4,11 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.daimajia.numberprogressbar.NumberProgressBar;
 
 import narmware.com.photouploadcopy.R;
 
 public class LoadingActivity extends AppCompatActivity {
     public static Activity activity;
-    public static NumberProgressBar mHorizontalProgress;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,8 +20,7 @@ public class LoadingActivity extends AppCompatActivity {
     }
 
     private void init() {
-         mHorizontalProgress = (NumberProgressBar) findViewById(R.id.number_progress);
-        mHorizontalProgress.setMax(100);
+
     }
 
     @Override

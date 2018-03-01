@@ -1,15 +1,8 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/grey_100"
-    tools:context="narmware.com.photouploadcopy.fragment.AddressFragment">
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
        <!-- <RelativeLayout
             android:layout_width="match_parent"
@@ -42,10 +35,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
         <android.support.v7.widget.CardView
             android:id="@+id/details_card"
             app:cardUseCompatPadding="true"
@@ -53,7 +42,7 @@
             android:elevation="@dimen/prof_card_elevation"
             android:layout_marginBottom="@dimen/prof_card_margin_bottom"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -65,136 +54,99 @@
                     android:layout_height="wrap_content">
                     <EditText
                         android:id="@+id/edt_area"
-                        android:padding="@dimen/prof_txt_padding"
+                        android:padding="@dimen/prof_dialog_txt_padding"
                         android:inputType="text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Area"
+                        android:hint="Area *"
                         android:background="@drawable/dialog_edittext"
                         style="@style/textStyle"
                         />
                 </android.support.design.widget.TextInputLayout>
+                <LinearLayout
+                    android:layout_marginBottom="@dimen/prof_dialog_horizontal_marginBottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/horizontal_line_height"
+                    android:background="@color/grey_300"/>
                 <android.support.design.widget.TextInputLayout
                     android:layout_margin="@dimen/prof_txt_margin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <EditText
                         android:id="@+id/edt_bld_no"
-                        android:padding="@dimen/prof_txt_padding"
+                        android:padding="@dimen/prof_dialog_txt_padding"
                         android:inputType="text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Building Number/Name"
+                        android:background="@drawable/dialog_edittext"
                         style="@style/textStyle"
                         />
                 </android.support.design.widget.TextInputLayout>
-
+                <LinearLayout
+                    android:layout_marginBottom="@dimen/prof_dialog_horizontal_marginBottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/horizontal_line_height"
+                    android:background="@color/grey_300"/>
                 <android.support.design.widget.TextInputLayout
                     android:layout_margin="@dimen/prof_txt_margin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <EditText
                         android:id="@+id/edt_flat_no"
-                        android:padding="@dimen/prof_txt_padding"
+                        android:padding="@dimen/prof_dialog_txt_padding"
                         android:inputType="text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Flat number"
+                        android:background="@drawable/dialog_edittext"
                         style="@style/textStyle"
                         />
                 </android.support.design.widget.TextInputLayout>
-
+                <LinearLayout
+                    android:layout_marginBottom="@dimen/prof_dialog_horizontal_marginBottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/horizontal_line_height"
+                    android:background="@color/grey_300"/>
                 <android.support.design.widget.TextInputLayout
                     android:layout_margin="@dimen/prof_txt_margin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <EditText
                         android:id="@+id/edt_land"
-                        android:padding="@dimen/prof_txt_padding"
+                        android:padding="@dimen/prof_dialog_txt_padding"
                         android:inputType="text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Landmark"
+                        android:hint="Landmark *"
+                        android:background="@drawable/dialog_edittext"
                         style="@style/textStyle"
                         />
                 </android.support.design.widget.TextInputLayout>
-
+                <LinearLayout
+                    android:layout_marginBottom="@dimen/prof_dialog_horizontal_marginBottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/horizontal_line_height"
+                    android:background="@color/grey_300"/>
                 <android.support.design.widget.TextInputLayout
                     android:layout_margin="@dimen/prof_txt_margin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <EditText
                         android:id="@+id/edt_addr"
-                        android:padding="@dimen/prof_txt_padding"
+                        android:padding="@dimen/prof_dialog_txt_padding"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         style="@style/textStyle"
-                        android:hint="Address"
+                        android:background="@drawable/dialog_edittext"
+                        android:hint="Address *"
                         />
                 </android.support.design.widget.TextInputLayout>
-
-                    <AutoCompleteTextView
-                        android:layout_marginTop="10dp"
-                        android:id="@+id/auto_pin"
-                        style="@style/textStyle"
-                        android:padding="@dimen/prof_txt_padding"
-                        android:inputType="number"
-                        android:digits="0123456789"
-                        android:maxLength="6"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Pin code"
-                        />
-                <android.support.design.widget.TextInputLayout
-                    android:layout_margin="@dimen/prof_txt_margin"
+                <LinearLayout
+                    android:layout_marginBottom="@dimen/prof_dialog_horizontal_marginBottom"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <EditText
-                        android:id="@+id/edt_state"
-                        android:maxLines="1"
-                        android:inputType="text"
-                        android:singleLine="true"
-                        android:padding="@dimen/prof_txt_padding"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="State"
-                        style="@style/textStyle"
-                        />
-                </android.support.design.widget.TextInputLayout>
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_margin="@dimen/prof_txt_margin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <EditText
-                        android:id="@+id/edt_dist"
-                        android:padding="@dimen/prof_txt_padding"
-                        android:inputType="text"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="District"
-                        style="@style/textStyle"
-                        />
-                </android.support.design.widget.TextInputLayout>
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/prof_txt_margin"
-                    >
-                    <EditText
-                        android:id="@+id/edt_city"
-                        android:maxLines="1"
-                        android:inputType="text"
-                        android:singleLine="true"
-                        android:padding="@dimen/prof_txt_padding"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="City"
-                        style="@style/textStyle"
-                        />
-                </android.support.design.widget.TextInputLayout>
-
+                    android:layout_height="@dimen/horizontal_line_height"
+                    android:background="@color/grey_300"/>
                 <android.support.design.widget.TextInputLayout
                     android:layout_margin="@dimen/prof_txt_margin"
                     android:layout_width="match_parent"
@@ -206,46 +158,63 @@
                         android:digits="0123456789"
                         android:maxLines="1"
                         android:singleLine="true"
-                        android:padding="@dimen/prof_txt_padding"
+                        android:padding="@dimen/prof_dialog_txt_padding"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Mobile"
+                        android:hint="Mobile *"
+                        android:background="@drawable/dialog_edittext"
                         style="@style/textStyle"
                         />
                 </android.support.design.widget.TextInputLayout>
+                <LinearLayout
+                    android:layout_marginBottom="@dimen/prof_dialog_horizontal_marginBottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/horizontal_line_height"
+                    android:background="@color/grey_300"/>
+                <LinearLayout
+                    android:id="@+id/linear_bottom"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:id="@+id/btn_submit"
+                        android:text="Confirm Address"
+                        android:textAllCaps="true"
+                        android:layout_margin="@dimen/prof_btn_margin"
+                        style="@style/buttonStyle"
+                        android:minWidth="1dp"
+                        android:minHeight="1dp"
+                        android:width="200dp"
+                        android:height="40dp"
+                        android:background="@color/colorPrimary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                   <!-- <Button
+                        android:id="@+id/btn_cancel"
+                        android:text="Cancel"
+                        style="@style/buttonStyle"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_margin="@dimen/prof_btn_margin"
+                        android:background="@drawable/button_dialog"
+                        android:minWidth="1dp"
+                        android:minHeight="1dp"
+                        android:width="100dp"
+                        android:height="40dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />-->
+                </LinearLayout>
+
+
 
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
 
-        <LinearLayout
-            android:id="@+id/linear_bottom"
-            android:layout_alignParentBottom="true"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <Button
-                android:id="@+id/btn_submit"
-                android:text="Submit"
-                android:layout_margin="@dimen/prof_btn_margin"
-                style="@style/buttonStyle"
-                android:background="@drawable/button_shape"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <Button
-                android:id="@+id/btn_cancel"
-                android:text="Cancel"
-                style="@style/buttonStyle"
-                android:textColor="@color/colorPrimary"
-                android:layout_margin="@dimen/prof_btn_margin"
-                android:background="@drawable/button_dialog"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-        </LinearLayout>
     </ScrollView>
 
     </LinearLayout>
-</FrameLayout>
+
