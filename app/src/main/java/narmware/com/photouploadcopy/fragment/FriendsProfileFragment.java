@@ -248,6 +248,25 @@ public class FriendsProfileFragment extends Fragment implements View.OnClickList
                 mName=mEdtName.getText().toString().trim();
                 mMail=mEdtMail.getText().toString().trim();
 
+                if(mArea.equals("") || mArea==null)
+                {
+                    validationFlag=1;
+                    Toast.makeText(getContext(), "Please enter Area", Toast.LENGTH_SHORT).show();
+                    //mEdtArea.setError("Please enter Area");
+                }
+
+                if(mLandmark.equals("") || mLandmark==null)
+                {
+                    validationFlag=1;
+                    // mEdtArea.setError("Please enter Landmark");
+                    Toast.makeText(getContext(), "Please enter Landmark", Toast.LENGTH_SHORT).show();
+                }
+                if(mAddrLine1.equals("") || mAddrLine1==null)
+                {
+                    validationFlag=1;
+                    Toast.makeText(getContext(), "Please enter Address", Toast.LENGTH_SHORT).show();
+                    //mEdtArea.setError("Please enter Address");
+                }
                 if(mPin.equals("") || mPin==null)
                 {
                     validationFlag=1;

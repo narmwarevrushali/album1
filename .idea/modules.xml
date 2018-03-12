@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PhotoUploadCopy.iml" filepath="$PROJECT_DIR$/PhotoUploadCopy.iml" />
-      <module fileurl="file://$PROJECT_DIR$/album1.iml" filepath="$PROJECT_DIR$/album1.iml" />
+      <module fileurl="file://C:\Users\savvy\Desktop\Projects\PhotoUploadCopy\album1.iml" filepath="C:\Users\savvy\Desktop\Projects\PhotoUploadCopy\album1.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
