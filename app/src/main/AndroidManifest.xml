@@ -78,6 +78,7 @@
         <activity
             android:name=".activity.SelectImagesActivity"
             android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait"
             />
         <activity android:name=".activity.SplashScreen"

@@ -44,6 +44,7 @@ import narmware.com.photouploadcopy.broadcast.SingleUploadBroadcastReceiver;
 import narmware.com.photouploadcopy.gallery_activities.AlbumSelectActivity;
 import narmware.com.photouploadcopy.helpers.Constants;
 import narmware.com.photouploadcopy.models.Address;
+import narmware.com.photouploadcopy.models.Friends;
 import narmware.com.photouploadcopy.models.Image;
 import narmware.com.photouploadcopy.services.AutoUploadService;
 import narmware.com.photouploadcopy.support.DatabaseAccess;
@@ -539,6 +540,7 @@ public class SelectImagesActivity extends AppCompatActivity implements View.OnCl
                 }
                 if(validationFlag==0) {
                     new SendAddress().execute();
+                    new UpdateFrndProfile().execute();
                 }
             }
         });
@@ -660,6 +662,102 @@ public class SelectImagesActivity extends AppCompatActivity implements View.OnCl
             {
                 Toast.makeText(SelectImagesActivity.this,"Internet not available,can not update profile",Toast.LENGTH_LONG).show();
                 mProgress.dismiss();
+            }
+        }
+    }
+
+    class UpdateFrndProfile extends AsyncTask<String, String, String> {
+
+        String frndId=SharedPreferencesHelper.getSelfFrndId(SelectImagesActivity.this);
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+            String json = null;
+            try
+            {
+                Gson gson = new Gson();
+                Friends friends=new Friends(0,null,null,null,null,null,null,null,null,null,null,null,null,0);
+                friends.setAddress(mAddress);
+                friends.setCity(mCity);
+                friends.setState(mState);
+                friends.setPin(mPin);
+                friends.setDist(mDist);
+                friends.setMobile(mMobile);
+                friends.setUser_id(SharedPreferencesHelper.getUserId(SelectImagesActivity.this));
+                friends.setMobile(mMobile);
+                friends.setF_id(frndId);
+                friends.setFr_email(SharedPreferencesHelper.getUserEmail(SelectImagesActivity.this));
+                friends.setFr_name(Constants.SEND_TO_ME);
+
+                json = gson.toJson(friends);
+                Log.e("JSON data updated",json);
+
+                HashMap<String, String> params = new HashMap<>();
+                params.put(Constants.JSON_STRING,json);
+
+                Log.e("JSON data updated ob",json);
+                String url = MyApplication.URL_SERVER + MyApplication.URL_UPDATE_FRIEND_PROFILE;
+                Log.e("JSON data updated url",url);
+                JSONObject ob=mJsonParser.makeHttpRequest(url, "GET",params );
+
+                if (ob == null) {
+                    Log.d("RESPONSE", "ERRORRRRR");
+                }
+                else {
+                    json = ob.toString();
+                }
+            }
+            catch (Exception ex) {
+
+                ex.printStackTrace();
+            }
+
+            return json;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+
+            try{Gson gson = new Gson();
+                if (s != null)
+                    Log.e("login data", s);
+
+                else
+                    Log.e("data", "login is null");
+
+                Friends friendResponse=gson.fromJson(s,Friends.class);
+                Log.e("friend data","Response"+friendResponse.getResponse());
+                int response= Integer.parseInt(friendResponse.getResponse());
+                if(response==Constants.NEW_ENTRY)
+                {
+                    DatabaseAccess databaseAccess = DatabaseAccess.getInstance(SelectImagesActivity.this);
+                    databaseAccess.open();
+                    int f_id= Integer.parseInt(frndId);
+                    databaseAccess.UpdateFrndsProfile(mAddress,mState,mDist,mCity,mPin,mMobile,"Self",SharedPreferencesHelper.getUserEmail(SelectImagesActivity.this),f_id);
+
+                    List<Friends> temp =databaseAccess.getFriends();
+                    for(int c=0;c < temp.size();c++)
+                    {
+                        Log.e("Friends data","Name  "+temp.get(c).getFr_name()+"server id  "+temp.get(c).getF_id());
+                    }
+
+                    Toast.makeText(SelectImagesActivity.this, "Profile updated successfully", Toast.LENGTH_SHORT).show();
+                }
+                if(response==Constants.ALREADY_PRESENT)
+                {
+                    Toast.makeText(SelectImagesActivity.this, "Friend is already added", Toast.LENGTH_SHORT).show();
+                }
+                // mProgress.dismiss();
+            }catch (Exception e)
+            {
+                Toast.makeText(SelectImagesActivity.this,"Internet not available,can not update profile",Toast.LENGTH_LONG).show();
+                //   mProgress.dismiss();
             }
         }
     }

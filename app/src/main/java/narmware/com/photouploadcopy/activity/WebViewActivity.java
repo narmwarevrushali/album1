@@ -372,6 +372,9 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
                   SharedPreferencesHelper.setCouponMinPrice(null, WebViewActivity.this);
                   SharedPreferencesHelper.setCouponPrice(null, WebViewActivity.this);
                   SharedPreferencesHelper.setCouponName(null, WebViewActivity.this);
+                  SharedPreferencesHelper.setIsSendMe(true,WebViewActivity.this);
+                  databaseAccess.UpdateQty("1", Integer.parseInt(SharedPreferencesHelper.getSelfFrndId(WebViewActivity.this)));
+
               }
             }catch (Exception e)
             {

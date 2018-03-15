@@ -1,7 +1,8 @@
-<LinearLayout android:orientation="vertical"
+<RelativeLayout android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@android:color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
        <!-- <RelativeLayout
@@ -30,23 +31,24 @@
             </LinearLayout>
 
         </RelativeLayout>-->
-
-    <ScrollView
+    <android.support.v7.widget.CardView
+        android:id="@+id/details_card"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="@dimen/prof_card_corner"
+        android:elevation="@dimen/prof_card_elevation"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/details_card"
-            app:cardUseCompatPadding="true"
-            app:cardCornerRadius="@dimen/prof_card_corner"
-            android:elevation="@dimen/prof_card_elevation"
-            android:layout_marginBottom="@dimen/prof_card_margin_bottom"
+        <ScrollView
             android:layout_width="match_parent"
+            android:fillViewport="true"
             android:layout_height="match_parent">
             <LinearLayout
                 android:orientation="vertical"
+                android:scrollbars="vertical"
+                android:scrollbarAlwaysDrawVerticalTrack="true"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_margin="@dimen/prof_txt_margin"
@@ -211,10 +213,7 @@
 
 
             </LinearLayout>
-
-        </android.support.v7.widget.CardView>
-
-    </ScrollView>
-
-    </LinearLayout>
+        </ScrollView>
+    </android.support.v7.widget.CardView>
+    </RelativeLayout>
 

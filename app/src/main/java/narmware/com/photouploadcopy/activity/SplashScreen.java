@@ -214,6 +214,9 @@ public class SplashScreen extends AppCompatActivity {
                     SharedPreferencesHelper.setCouponPrice(null, SplashScreen.this);
                     SharedPreferencesHelper.setCouponName(null, SplashScreen.this);
 
+                    SharedPreferencesHelper.setIsSendMe(true,SplashScreen.this);
+                    databaseAccess.UpdateQty("1", Integer.parseInt(SharedPreferencesHelper.getSelfFrndId(SplashScreen.this)));
+
                 }
             }catch (Exception e)
             {
