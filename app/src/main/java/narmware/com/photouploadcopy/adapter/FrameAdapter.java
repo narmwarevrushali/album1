@@ -98,7 +98,7 @@ public class FrameAdapter extends RecyclerView.Adapter<FrameAdapter.MyViewHolder
         Picasso.with(mContext)
                 .load(frame.getFrame_path())
                 .fit()
-                .placeholder(R.drawable.faces_copy)
+                .placeholder(R.drawable.alb_logo)
                 .into(holder.mImgFrame);
 
         holder.mthumb_title.setText(frame.getFrame_title());

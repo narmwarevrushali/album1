@@ -9,7 +9,7 @@
         android:id="@+id/img_logo"
         android:transitionName="logo"
         android:layout_centerInParent="true"
-        app:srcCompat="@drawable/faces_copy"
+        app:srcCompat="@drawable/alb_logo"
         android:layout_width="@dimen/splash_img_height"
         android:layout_height="@dimen/splash_img_width" />
 </RelativeLayout>

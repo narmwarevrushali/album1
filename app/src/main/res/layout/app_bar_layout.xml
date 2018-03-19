@@ -21,7 +21,7 @@
 
                 <ImageView
                     android:id="@+id/img_logo"
-                    app:srcCompat="@drawable/faces_copy"
+                    app:srcCompat="@drawable/alb_logo"
                     android:transitionName="logo"
                     android:layout_centerInParent="true"
                     android:layout_width="@dimen/app_bar_img_width"
